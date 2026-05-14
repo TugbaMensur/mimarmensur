@@ -40,6 +40,7 @@ function Research() {
         </div>
       </div>
     </section>
+    </>
   );
 }
 

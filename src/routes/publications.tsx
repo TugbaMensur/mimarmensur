@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { BackButton } from "@/components/BackButton";
 
 export const Route = createFileRoute("/publications")({
   head: () => ({
@@ -18,6 +19,8 @@ const sections = [
 
 function Publications() {
   return (
+    <>
+      <BackButton />
     <section className="max-w-[1200px] mx-auto px-8 py-24">
       <p className="text-xs uppercase tracking-[0.4em] text-accent-mode mb-6">Writings</p>
       <h1 className="font-display text-5xl md:text-6xl leading-[1.05]">Publications<br />& Essays</h1>
@@ -51,5 +54,6 @@ function Publications() {
         ))}
       </div>
     </section>
+    </>
   );
 }

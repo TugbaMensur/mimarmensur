@@ -1,4 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { BackButton } from "@/components/BackButton";
 
 export const Route = createFileRoute("/portfolio/$id")({
   component: ProjectDetail,
@@ -15,10 +16,9 @@ function ProjectDetail() {
   const next = n < 8 ? String(n + 1) : null;
 
   return (
+    <>
+      <BackButton to="/portfolio" label="Portfolio" />
     <article className="max-w-[1200px] mx-auto px-8 py-24">
-      <Link to="/portfolio" className="text-xs uppercase tracking-[0.3em] text-muted-foreground hover:text-accent-mode">
-        ← Portfolio
-      </Link>
 
       <header className="mt-12 grid md:grid-cols-12 gap-8 pb-16 border-b border-border">
         <div className="md:col-span-7">
