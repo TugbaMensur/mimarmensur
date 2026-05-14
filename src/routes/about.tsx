@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { BackButton } from "@/components/BackButton";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -12,6 +13,8 @@ export const Route = createFileRoute("/about")({
 
 function About() {
   return (
+    <>
+      <BackButton />
     <section className="max-w-[1200px] mx-auto px-8 py-24 md:py-32 grid md:grid-cols-12 gap-12">
       <div className="md:col-span-4">
         <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">About</p>
