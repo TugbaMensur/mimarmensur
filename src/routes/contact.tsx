@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { BackButton } from "@/components/BackButton";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -12,6 +13,8 @@ export const Route = createFileRoute("/contact")({
 
 function Contact() {
   return (
+    <>
+      <BackButton />
     <section className="max-w-[1100px] mx-auto px-8 py-32 min-h-[70vh] flex flex-col justify-center">
       <p className="text-xs uppercase tracking-[0.4em] text-accent-mode mb-8">Contact</p>
       <h1 className="font-display text-4xl md:text-6xl leading-[1.1] max-w-3xl">
@@ -34,5 +37,6 @@ function Contact() {
         </div>
       </div>
     </section>
+    </>
   );
 }

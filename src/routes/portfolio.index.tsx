@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { BackButton } from "@/components/BackButton";
 
 export const Route = createFileRoute("/portfolio/")({
   head: () => ({
@@ -19,6 +20,8 @@ const projects = Array.from({ length: 8 }, (_, i) => ({
 
 function Portfolio() {
   return (
+    <>
+      <BackButton />
     <section className="max-w-[1600px] mx-auto px-8 py-24">
       <div className="grid md:grid-cols-12 mb-20">
         <div className="md:col-span-8">
@@ -59,5 +62,6 @@ function Portfolio() {
         ))}
       </div>
     </section>
+    </>
   );
 }
