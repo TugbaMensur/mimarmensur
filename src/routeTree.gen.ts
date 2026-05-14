@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ThesisRouteImport } from './routes/thesis'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ResearchRouteImport } from './routes/research'
 import { Route as PublicationsRouteImport } from './routes/publications'
 import { Route as DocumentsRouteImport } from './routes/documents'
@@ -22,6 +23,11 @@ import { Route as PortfolioIdRouteImport } from './routes/portfolio.$id'
 const ThesisRoute = ThesisRouteImport.update({
   id: '/thesis',
   path: '/thesis',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ResearchRoute = ResearchRouteImport.update({
@@ -72,6 +78,7 @@ export interface FileRoutesByFullPath {
   '/documents': typeof DocumentsRoute
   '/publications': typeof PublicationsRoute
   '/research': typeof ResearchRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/thesis': typeof ThesisRoute
   '/portfolio/$id': typeof PortfolioIdRoute
   '/portfolio/': typeof PortfolioIndexRoute
@@ -83,6 +90,7 @@ export interface FileRoutesByTo {
   '/documents': typeof DocumentsRoute
   '/publications': typeof PublicationsRoute
   '/research': typeof ResearchRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/thesis': typeof ThesisRoute
   '/portfolio/$id': typeof PortfolioIdRoute
   '/portfolio': typeof PortfolioIndexRoute
@@ -95,6 +103,7 @@ export interface FileRoutesById {
   '/documents': typeof DocumentsRoute
   '/publications': typeof PublicationsRoute
   '/research': typeof ResearchRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/thesis': typeof ThesisRoute
   '/portfolio/$id': typeof PortfolioIdRoute
   '/portfolio/': typeof PortfolioIndexRoute
@@ -108,6 +117,7 @@ export interface FileRouteTypes {
     | '/documents'
     | '/publications'
     | '/research'
+    | '/sitemap.xml'
     | '/thesis'
     | '/portfolio/$id'
     | '/portfolio/'
@@ -119,6 +129,7 @@ export interface FileRouteTypes {
     | '/documents'
     | '/publications'
     | '/research'
+    | '/sitemap.xml'
     | '/thesis'
     | '/portfolio/$id'
     | '/portfolio'
@@ -130,6 +141,7 @@ export interface FileRouteTypes {
     | '/documents'
     | '/publications'
     | '/research'
+    | '/sitemap.xml'
     | '/thesis'
     | '/portfolio/$id'
     | '/portfolio/'
@@ -142,6 +154,7 @@ export interface RootRouteChildren {
   DocumentsRoute: typeof DocumentsRoute
   PublicationsRoute: typeof PublicationsRoute
   ResearchRoute: typeof ResearchRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   ThesisRoute: typeof ThesisRoute
   PortfolioIdRoute: typeof PortfolioIdRoute
   PortfolioIndexRoute: typeof PortfolioIndexRoute
@@ -154,6 +167,13 @@ declare module '@tanstack/react-router' {
       path: '/thesis'
       fullPath: '/thesis'
       preLoaderRoute: typeof ThesisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/research': {
@@ -222,6 +242,7 @@ const rootRouteChildren: RootRouteChildren = {
   DocumentsRoute: DocumentsRoute,
   PublicationsRoute: PublicationsRoute,
   ResearchRoute: ResearchRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   ThesisRoute: ThesisRoute,
   PortfolioIdRoute: PortfolioIdRoute,
   PortfolioIndexRoute: PortfolioIndexRoute,
