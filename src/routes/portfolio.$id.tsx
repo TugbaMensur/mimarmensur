@@ -71,6 +71,7 @@ function ProjectDetail() {
         ) : <span />}
       </nav>
     </article>
+    </>
   );
 }
 
