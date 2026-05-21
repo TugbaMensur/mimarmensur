@@ -36,18 +36,24 @@ function Thesis() {
         <div className="grid md:grid-cols-12 gap-12 items-start">
           <div className="md:col-span-8">
             <h1 className="font-display text-5xl md:text-6xl leading-[1.05]">
-              Spatial Thresholds<br />in Post-Seismic Urbanism
+              Geometry and Philosophy of Folding:<br />
+              <span className="text-accent-mode">Architecture as a Derivative</span>
             </h1>
             <p className="mt-8 text-sm uppercase tracking-[0.25em] text-muted-foreground">
               Department of Architecture · Master Thesis Presentation
             </p>
             <p className="mt-10 text-lg leading-[1.9] text-foreground/80 max-w-2xl">
-              This thesis investigates how architecture mediates the relationship
-              between memory, rupture, and reconstruction in post-seismic
-              territories. Through drawings, mappings, and case studies, it
-              proposes spatial thresholds as instruments for reading the city —
-              moments where structure, void, and inhabitation negotiate a fragile
-              continuity between what was, what remains, and what is becoming.
+              This thesis explores the emergence of folding in architecture as
+              both a theoretical and practical phenomenon between 1990 and 2006,
+              using the concept of the &ldquo;fold&rdquo; as its focal point. As
+              Greg Lynn describes in the introduction to his 2004 publication
+              &ldquo;Folding in Architecture&rdquo;, early folding projects were
+              characterized by &ldquo;happy accidents&rdquo; — designs that
+              embraced complexity through experimentation, automatism,
+              arbitrariness, and chance. Within this context, the fold has
+              appeared in multiple roles: as a metaphor, as a physical mechanism
+              of bending and layering, and even as an extension of a kind of
+              digital Gothic sensibility.
             </p>
           </div>
 
