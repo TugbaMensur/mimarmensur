@@ -5,6 +5,10 @@ const THESIS_DRIVE_URL =
   "https://drive.google.com/file/d/1oQpUZNCwFvShz8vLU_sRYHXoK6RJU4KL/view?usp=drive_link";
 const THESIS_PREVIEW_URL =
   "https://drive.google.com/file/d/1oQpUZNCwFvShz8vLU_sRYHXoK6RJU4KL/preview";
+const THESIS_READ_URL =
+  "https://drive.google.com/file/d/1WL34pZmtS0kCyS4QsnOVrKyBD3IcKxlu/view";
+const THESIS_READ_PREVIEW_URL =
+  "https://drive.google.com/file/d/1WL34pZmtS0kCyS4QsnOVrKyBD3IcKxlu/preview";
 
 export const Route = createFileRoute("/thesis")({
   head: () => ({
