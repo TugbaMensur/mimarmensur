@@ -1,15 +1,13 @@
 import { Link, useLocation, Outlet } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const nav = [
-  { to: "/", label: "Index" },
   { to: "/about", label: "About" },
   { to: "/portfolio", label: "Portfolio" },
-  { to: "/research", label: "Research" },
-  { to: "/thesis", label: "Thesis" },
-  { to: "/publications", label: "Publications" },
-  { to: "/documents", label: "Documents" },
+  { to: "/thesis", label: "Thesis and Publications" },
+  { to: "/documents", label: "Documents and Diplomas" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
@@ -18,20 +16,33 @@ const academicRoutes = ["/research", "/thesis", "/publications", "/documents"];
 const SIDEBAR_WIDTH = "16rem";
 
 function NavList({ onNavigate }: { onNavigate?: () => void }) {
+  const location = useLocation();
+
   return (
     <nav className="flex flex-col gap-6">
-      {nav.map((n) => (
-        <Link
-          key={n.to}
-          to={n.to}
-          onClick={onNavigate}
-          className="font-display text-base tracking-[0.2em] uppercase text-muted-foreground hover:text-accent-mode transition-colors"
-          activeProps={{ className: "text-accent-mode" }}
-          activeOptions={{ exact: n.to === "/" }}
-        >
-          {n.label}
-        </Link>
-      ))}
+      {nav.map((n) => {
+        const isActive =
+          n.to === "/thesis"
+            ? location.pathname === "/thesis" || location.pathname === "/publications"
+            : location.pathname === n.to ||
+              (n.to !== "/" && location.pathname.startsWith(n.to));
+
+        return (
+          <Link
+            key={n.to}
+            to={n.to}
+            onClick={onNavigate}
+            className={cn(
+              "font-display text-base tracking-[0.2em] uppercase transition-colors",
+              isActive
+                ? "text-accent-mode"
+                : "text-muted-foreground hover:text-accent-mode"
+            )}
+          >
+            {n.label}
+          </Link>
+        );
+      })}
     </nav>
   );
 }
