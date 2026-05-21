@@ -32,10 +32,10 @@ function NavList({ onNavigate }: { onNavigate?: () => void }) {
             to={n.to}
             onClick={onNavigate}
             className={cn(
-              "font-display text-base tracking-[0.2em] uppercase transition-colors",
+              "font-display text-base tracking-[0.2em] uppercase transition-colors hover-neon",
               isActive
                 ? "text-accent-mode"
-                : "text-muted-foreground hover:text-accent-mode"
+                : "text-muted-foreground"
             )}
           >
             {n.label}
