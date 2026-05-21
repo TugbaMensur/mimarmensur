@@ -60,6 +60,7 @@
   --accent-creative: #D53928;
   --accent-academic: #091BFE;
   --accent-color: var(--accent-creative);
+  --accent-hover: #39E75F;
 }
 
 [data-mode="academic"] {
@@ -111,5 +112,11 @@
     background-color: var(--accent-color);
     margin-right: 1rem;
     flex-shrink: 0;
+  .hover-neon {
+    transition: color 0.4s ease;
   }
+  .hover-neon:hover {
+    color: #39E75F;
+  }
+}
 }
