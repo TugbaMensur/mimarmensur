@@ -24,8 +24,7 @@ function NavList({ onNavigate }: { onNavigate?: () => void }) {
         const isActive =
           n.to === "/thesis"
             ? location.pathname === "/thesis" || location.pathname === "/publications"
-            : location.pathname === n.to ||
-              (n.to !== "/" && location.pathname.startsWith(n.to));
+            : location.pathname === n.to || location.pathname.startsWith(n.to);
 
         return (
           <Link
