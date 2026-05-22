@@ -56,11 +56,11 @@
   --input: oklch(0.9 0.003 90);
   --ring: oklch(0.7 0.04 256.788);
 
-  /* Dual-tone accent system */
-  --accent-creative: #D53928;
-  --accent-academic: #091BFE;
+  /* Dual-tone accent system — sketch palette */
+  --accent-creative: #002D72; /* Derin Kobalt Mavisi */
+  --accent-academic: #009999; /* Canlı Teal */
   --accent-color: var(--accent-creative);
-  --accent-hover: #39E75F;
+  --accent-hover: #009999;
 }
 
 [data-mode="academic"] {
@@ -112,11 +112,11 @@
     background-color: var(--accent-color);
     margin-right: 1rem;
     flex-shrink: 0;
+  }
   .hover-neon {
     transition: color 0.4s ease;
   }
   .hover-neon:hover {
-    color: #39E75F;
+    color: var(--accent-hover);
   }
-}
 }
