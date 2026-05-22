@@ -78,7 +78,7 @@ function Portfolio() {
               </h3>
               <span className="text-xs tracking-widest text-muted-foreground">{p.year}</span>
             </div>
-            <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground mt-1">
+            <p className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground mt-1">
               {p.type}
             </p>
           </Link>
