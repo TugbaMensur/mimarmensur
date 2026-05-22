@@ -38,10 +38,13 @@ function ProjectDetail() {
           <strong className="text-accent-mode font-normal">Behlerbeyi Sport Complex</strong>
         </p>
         <p className="mt-6 text-base leading-[1.9] text-foreground/80">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-          veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-          commodo consequat.
+          The study began with the investigation of the meanings that the word sport has been given throughout the ages. Etymologically, sport "des" away + porter "to carry" means "keep the mind away from serious issues". It includes both exercises related to the body and mind, and activities carried out individually or collectively within certain rules.
+        </p>
+        <p className="mt-6 text-base leading-[1.9] text-foreground/80">
+          Historically, it is associated with issues such as survival, defense and attack, and cooperation in the context of fighting against nature. Due to the multitude of concepts and phrases that can be included in the content of sports activities, a network map was created that is grouped into three categories to refer to the history of sports, their nature, and the relationship they establish with the body and mind. The purpose of this network is to show the breadth of the place that sports have acquired in our lives.
+        </p>
+        <p className="mt-6 text-base leading-[1.9] text-foreground/80">
+          The sports complex was designed in Beylerbeyi, one of the districts of the Bosphorus. It was examined how this area has transformed throughout history. This place, which was a transition area in the pre-Byzantine period, has maintained its introverted character throughout history. The complex aims to combine this character with sports that can be played individually and collectively. In this context, the sports complex design is a center that includes indoor and outdoor sports areas and an Olympic pool with a capacity of approximately 2,500 spectators.
         </p>
       </div>
 
