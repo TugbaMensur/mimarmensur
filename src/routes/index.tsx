@@ -36,11 +36,11 @@ function Index() {
         </div>
 
         {/* Visual column */}
-        <div className="md:col-span-7 md:col-start-6 order-1 md:order-2 relative">
+        <div className="md:col-span-7 md:col-start-6 order-1 md:order-2 relative flex items-center justify-center">
           <img
             src={mainVisual}
-            alt="Architectural structural study — handdrawn linework in terracotta and green"
-            className="w-full h-auto select-none pointer-events-none mix-blend-multiply"
+            alt="Architectural sketch — primary hero visual"
+            className="w-full h-auto max-h-[80vh] object-contain select-none pointer-events-none"
             loading="eager"
           />
         </div>
