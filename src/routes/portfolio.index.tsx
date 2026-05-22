@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { BackButton } from "@/components/BackButton";
 import cover1 from "@/assets/cover-1.jpg";
 import cover2 from "@/assets/cover-2.jpg";
+import cover3 from "@/assets/cover-3.jpg";
 
 
 export const Route = createFileRoute("/portfolio/")({
@@ -14,13 +15,13 @@ export const Route = createFileRoute("/portfolio/")({
   component: Portfolio,
 });
 
-const years = [2017, 2016, 2019, 2020, 2021, 2022, 2023, 2024];
+const years = [2017, 2016, 2014, 2020, 2021, 2022, 2023, 2024];
 const projects = Array.from({ length: 8 }, (_, i) => ({
   id: String(i + 1),
   name: `Project ${i + 1}`,
   year: years[i],
-  type: ["Sport Complex", "Library", "Cultural", "Urban", "Pavilion", "Interior", "Mixed-use", "Concept"][i],
-  cover: i === 0 ? cover1 : i === 1 ? cover2 : null,
+  type: ["Sport Complex", "Library", "Survey", "Urban", "Pavilion", "Interior", "Mixed-use", "Concept"][i],
+  cover: i === 0 ? cover1 : i === 1 ? cover2 : i === 2 ? cover3 : null,
 }));
 
 

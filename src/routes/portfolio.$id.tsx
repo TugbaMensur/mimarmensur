@@ -26,7 +26,7 @@ function ProjectDetail() {
           <h1 className="font-display text-5xl md:text-6xl leading-[1.05]">Project {n}</h1>
         </div>
         <div className="md:col-span-4 md:col-start-9 space-y-3 text-sm">
-          <Meta label="Year" value={`${[2017, 2016, 2019, 2020, 2021, 2022, 2023, 2024][n - 1]}`} />
+          <Meta label="Year" value={`${[2017, 2016, 2014, 2020, 2021, 2022, 2023, 2024][n - 1]}`} />
           <Meta label="Location" value="—" />
           <Meta label="Type" value="—" />
           <Meta label="Status" value="Placeholder" />
