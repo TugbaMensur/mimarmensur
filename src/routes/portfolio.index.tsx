@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { BackButton } from "@/components/BackButton";
+import cover1 from "@/assets/cover-1.jpg";
+
 
 export const Route = createFileRoute("/portfolio/")({
   head: () => ({
