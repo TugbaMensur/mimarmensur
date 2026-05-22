@@ -20,7 +20,7 @@ export const Route = createFileRoute("/portfolio/")({
   component: Portfolio,
 });
 
-const years = [2017, 2016, 2014, 2015, 2018, 2022, 2023, 2024];
+const years = [2017, 2016, 2014, 2015, 2018, 2019, 2023, 2024];
 const covers = [cover1, cover2, cover3, cover4, cover5, cover6, cover7, cover8];
 const projects = Array.from({ length: 8 }, (_, i) => ({
   id: String(i + 1),
