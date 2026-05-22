@@ -1,5 +1,12 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { BackButton } from "@/components/BackButton";
+import project8_1 from "@/assets/project8-1.png";
+import project8_2 from "@/assets/project8-2.png";
+import project8_3 from "@/assets/project8-3.png";
+import project8_4 from "@/assets/project8-4.png";
+import project8_5 from "@/assets/project8-5.png";
+
+const project8Images = [project8_1, project8_2, project8_3, project8_4, project8_5];
 
 export const Route = createFileRoute("/portfolio/$id")({
   component: ProjectDetail,
@@ -56,11 +63,20 @@ function ProjectDetail() {
       <div className="mt-20 space-y-12">
         {(n === 8 ? [1, 2, 3, 4, 5] : [1, 2, 3, 4]).map((i) => (
           <figure key={i} className="aspect-[16/10] bg-muted relative overflow-hidden">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="font-display text-sm uppercase tracking-[0.3em] text-muted-foreground/60">
-                Image {i.toString().padStart(2, "0")} — Placeholder
-              </span>
-            </div>
+            {n === 8 ? (
+              <img
+                src={project8Images[i - 1]}
+                alt={`Active Thought — Image ${i.toString().padStart(2, "0")}`}
+                className="absolute inset-0 w-full h-full object-contain"
+                loading="lazy"
+              />
+            ) : (
+              <div className="absolute inset-0 flex items-center justify-center">
+                <span className="font-display text-sm uppercase tracking-[0.3em] text-muted-foreground/60">
+                  Image {i.toString().padStart(2, "0")} — Placeholder
+                </span>
+              </div>
+            )}
           </figure>
         ))}
       </div>
