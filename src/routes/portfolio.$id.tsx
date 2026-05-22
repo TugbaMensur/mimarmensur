@@ -35,8 +35,7 @@ function ProjectDetail() {
 
       <div className="mt-16 max-w-2xl">
         <p className="font-display text-xl leading-relaxed">
-          <strong className="text-accent-mode font-normal">Placeholder:</strong> The
-          real project details and images will be placed here.
+          <strong className="text-accent-mode font-normal">Behlerbeyi Sport Complex</strong>
         </p>
         <p className="mt-6 text-base leading-[1.9] text-foreground/80">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
