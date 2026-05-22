@@ -35,7 +35,7 @@ function ProjectDetail() {
 
       <div className="mt-16 max-w-2xl">
         <p className="font-display text-xl leading-relaxed">
-          <strong className="text-accent-mode font-normal">{["Beylerbeyi Sport Complex", "Impasse Library", "Survey Of Sultan Reşad Khan Tomb", "Implementation Project Of A Photographer House", "Losing Home: Metropolis, Dwelling, Body", "Instant Installation", "Sea Horse and Secret Underwater Cave", "Project 8"][n - 1]}</strong>
+          <strong className="text-accent-mode font-normal">{["Beylerbeyi Sport Complex", "Impasse Library", "Survey Of Sultan Reşad Khan Tomb", "Implementation Project Of A Photographer House", "Losing Home: Metropolis, Dwelling, Body", "Instant Installation", "Sea Horse and Secret Underwater Cave", "Active Thought"][n - 1]}</strong>
         </p>
         <p className="mt-6 text-base leading-[1.9] text-foreground/80">
           {[
