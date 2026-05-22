@@ -73,7 +73,7 @@ function Portfolio() {
               <div className="absolute inset-0 bg-accent-mode opacity-0 group-hover:opacity-5 transition-opacity duration-500" />
             </div>
             <div className="mt-5 flex items-baseline justify-between">
-              <h3 className="font-display text-xl group-hover:text-accent-mode transition-colors">
+              <h3 className="font-display text-base group-hover:text-accent-mode transition-colors">
                 {p.name}
               </h3>
               <span className="text-xs tracking-widest text-muted-foreground">{p.year}</span>
