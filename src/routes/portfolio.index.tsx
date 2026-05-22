@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { BackButton } from "@/components/BackButton";
+import cover1 from "@/assets/cover-1.jpg";
+
 
 export const Route = createFileRoute("/portfolio/")({
   head: () => ({
@@ -16,7 +18,10 @@ const projects = Array.from({ length: 8 }, (_, i) => ({
   name: `Project ${i + 1}`,
   year: 2018 + i,
   type: ["Residential", "Public", "Cultural", "Urban", "Pavilion", "Interior", "Mixed-use", "Concept"][i],
+  cover: i === 0 ? cover1 : null,
 }));
+
+
 
 function Portfolio() {
   return (
@@ -39,14 +44,23 @@ function Portfolio() {
             className="group block"
           >
             <div className="aspect-[4/5] bg-muted overflow-hidden relative">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span
-                  className="font-display select-none"
-                  style={{ opacity: 0.1, fontSize: "8rem", color: "var(--accent-color)" }}
-                >
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-              </div>
+              {p.cover ? (
+                <img
+                  src={p.cover}
+                  alt={p.name}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              ) : (
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span
+                    className="font-display select-none"
+                    style={{ opacity: 0.1, fontSize: "8rem", color: "var(--accent-color)" }}
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                </div>
+              )}
+
               <div className="absolute inset-0 bg-accent-mode opacity-0 group-hover:opacity-5 transition-opacity duration-500" />
             </div>
             <div className="mt-5 flex items-baseline justify-between">
