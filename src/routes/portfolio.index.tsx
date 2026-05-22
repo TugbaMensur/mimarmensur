@@ -1,13 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { BackButton } from "@/components/BackButton";
-import cover1 from "@/assets/cover-1.jpg";
-import cover2 from "@/assets/cover-2.jpg";
-import cover3 from "@/assets/cover-3.jpg";
-import cover4 from "@/assets/cover-4.jpg";
-import cover5 from "@/assets/cover-5.jpg";
-import cover6 from "@/assets/cover-6.jpg";
-import cover7 from "@/assets/cover-7.jpg";
-import cover8 from "@/assets/cover-8.jpg";
+import cover1 from "@/assets/cover-1.png";
+import cover2 from "@/assets/cover-2.png";
+import cover3 from "@/assets/cover-3.png";
+import cover4 from "@/assets/cover-4.png";
+import cover5 from "@/assets/cover-5.png";
+import cover6 from "@/assets/cover-6.png";
+import cover7 from "@/assets/cover-7.png";
+import cover8 from "@/assets/cover-8.png";
 
 
 export const Route = createFileRoute("/portfolio/")({
@@ -52,12 +52,12 @@ function Portfolio() {
             params={{ id: p.id }}
             className="group block"
           >
-            <div className="aspect-[4/5] bg-muted overflow-hidden relative">
+            <div className="aspect-[4/5] overflow-hidden relative">
               {p.cover ? (
                 <img
                   src={p.cover}
                   alt={p.name}
-                  className="absolute inset-0 w-full h-full object-cover"
+                  className="absolute inset-0 w-full h-full object-contain"
                 />
               ) : (
                 <div className="absolute inset-0 flex items-center justify-center">
