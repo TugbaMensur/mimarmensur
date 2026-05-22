@@ -79,28 +79,13 @@ function ProjectDetail() {
             </figcaption>
           </figure>
 
-          {/* Plates 02 & 03 — asymmetric pair with whitespace */}
-          <section className="mt-40 grid md:grid-cols-12 gap-x-12 gap-y-20">
-            <figure className="md:col-span-8">
+          {/* Plates 02 & 03 — direct image presentation */}
+          <section className="mt-40 grid md:grid-cols-2 gap-12">
+            <figure>
               <img src={project8Images[1]} alt="Active Thought — Plate 02" className="w-full h-auto object-contain" />
-              <figcaption className="mt-4 text-[10px] uppercase tracking-[0.4em] text-muted-foreground">Plate 02</figcaption>
             </figure>
-            <div className="md:col-span-3 md:col-start-10 md:pt-16">
-              <p className="text-[10px] uppercase tracking-[0.4em] text-accent-mode mb-4">I.</p>
-              <p className="font-display text-lg leading-[1.6] text-foreground/80 italic">
-                Drawings as components of the flow of thought specific to that time.
-              </p>
-            </div>
-
-            <div className="md:col-span-3 md:col-start-2 md:row-start-2 md:pt-24">
-              <p className="text-[10px] uppercase tracking-[0.4em] text-accent-mode mb-4">II.</p>
-              <p className="font-display text-lg leading-[1.6] text-foreground/80 italic">
-                Reminiscing a memory, a character — not the entrance, not the circulation route.
-              </p>
-            </div>
-            <figure className="md:col-span-8 md:col-start-5 md:row-start-2">
+            <figure>
               <img src={project8Images[2]} alt="Active Thought — Plate 03" className="w-full h-auto object-contain" />
-              <figcaption className="mt-4 text-[10px] uppercase tracking-[0.4em] text-muted-foreground">Plate 03</figcaption>
             </figure>
           </section>
 
