@@ -35,7 +35,7 @@ function ProjectDetail() {
 
       <div className="mt-16 max-w-2xl">
         <p className="font-display text-xl leading-relaxed">
-          <strong className="text-accent-mode font-normal">Behlerbeyi Sport Complex</strong>
+          <strong className="text-accent-mode font-normal">Beylerbeyi Sport Complex</strong>
         </p>
         <p className="mt-6 text-base leading-[1.9] text-foreground/80">
           The study began with the investigation of the meanings that the word sport has been given throughout the ages. Etymologically, sport "des" away + porter "to carry" means "keep the mind away from serious issues". It includes both exercises related to the body and mind, and activities carried out individually or collectively within certain rules.
