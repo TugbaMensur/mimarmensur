@@ -26,7 +26,7 @@ const projects = Array.from({ length: 8 }, (_, i) => ({
   id: String(i + 1),
   name: `Project ${i + 1}`,
   year: years[i],
-  type: ["BEYLERBEYI SPORT COMPLEX", "IMPASSE LIBRARY", "Survey and Documentation", "Architectural Application Project", "Pavilion", "Interior", "Mixed-use", "Concept"][i],
+  type: ["BEYLERBEYI SPORT COMPLEX", "IMPASSE LIBRARY", "SURVEY OF SULTAN REŞAT KHAN TOMB", "Architectural Application Project", "Pavilion", "Interior", "Mixed-use", "Concept"][i],
   cover: covers[i],
 }));
 
