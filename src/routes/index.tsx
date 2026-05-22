@@ -17,10 +17,10 @@ function Index() {
           <h1 className="font-display font-light text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight">
             Architecture begins<br />
             where space<br />
-            becomes <em className="not-italic text-accent-mode">legible</em>.
+            becomes <em className="not-italic text-accent-mode">legible</em>
           </h1>
           <p className="mt-10 max-w-md text-base leading-relaxed text-muted-foreground">
-            Drawings, research, and reflections on architecture and city.
+            Drawings, research, and reflections on architecture and city
           </p>
           <div className="mt-14 flex gap-10 text-xs uppercase tracking-[0.3em]">
             <Link
