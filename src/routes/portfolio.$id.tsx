@@ -38,13 +38,18 @@ function ProjectDetail() {
           <strong className="text-accent-mode font-normal">{["Beylerbeyi Sport Complex", "Impasse Library", "Project 3", "Project 4", "Project 5", "Project 6", "Project 7", "Project 8"][n - 1]}</strong>
         </p>
         <p className="mt-6 text-base leading-[1.9] text-foreground/80">
-          The study began with the investigation of the meanings that the word sport has been given throughout the ages. Etymologically, sport "des" away + porter "to carry" means "keep the mind away from serious issues". It includes both exercises related to the body and mind, and activities carried out individually or collectively within certain rules.
-        </p>
-        <p className="mt-6 text-base leading-[1.9] text-foreground/80">
-          Historically, it is associated with issues such as survival, defense and attack, and cooperation in the context of fighting against nature. Due to the multitude of concepts and phrases that can be included in the content of sports activities, a network map was created that is grouped into three categories to refer to the history of sports, their nature, and the relationship they establish with the body and mind. The purpose of this network is to show the breadth of the place that sports have acquired in our lives.
-        </p>
-        <p className="mt-6 text-base leading-[1.9] text-foreground/80">
-          The sports complex was designed in Beylerbeyi, one of the districts of the Bosphorus. It was examined how this area has transformed throughout history. This place, which was a transition area in the pre-Byzantine period, has maintained its introverted character throughout history. The complex aims to combine this character with sports that can be played individually and collectively. In this context, the sports complex design is a center that includes indoor and outdoor sports areas and an Olympic pool with a capacity of approximately 2,500 spectators.
+          {[
+            "The study began with the investigation of the meanings that the word sport has been given throughout the ages. Etymologically, sport \"des\" away + porter \"to carry\" means \"keep the mind away from serious issues\". It includes both exercises related to the body and mind, and activities carried out individually or collectively within certain rules.",
+            "Taksim Square is a landmark from past to now with its geographic character, settlement texture, socio-cultural structure and socio economical roles that it untertook. This square which is physically adjacent to project space has played an effective role in the production process.\n\nThe analysis section of the project focuses on two main questions regarding the square. The first of these questions is as follows: \"Does the square have a border?\"; in other words, \"Can it be said that the effect of the square is limited to the structures and/or areas surrounding it?\". The second question can be asked as follows: \"Is the square a political representation tool fed by the cycle of destruction, reconstruction and new additions of the structures that characterize it throughout history?\"\n\nIn the context of these questions, the analysis section examines how the areas and structures surrounding Taksim have historically transformed together with the breaking points. Then, the structure formed by the breaking points is expressed through a collage within the framework of the conditions of the coming together of certain visuals. In the final product, Taksim Square is approached holistically. The project area is focused on as one of the design decisions taken at the square scale.\n\nThe name of the design is called by the adjacent street to the project area (Approximate translation is Impasse Library). In this context, project is an extension of the existing library. The mass design references the characteristic features of the existing structure in a way that links to the idea of the module.",
+            "Project 3 description.",
+            "Project 4 description.",
+            "Project 5 description.",
+            "Project 6 description.",
+            "Project 7 description.",
+            "Project 8 description.",
+          ][n - 1].split("\n\n").map((paragraph, i) => (
+            <span key={i} className="block mt-6 first:mt-0">{paragraph}</span>
+          ))}
         </p>
       </div>
 
