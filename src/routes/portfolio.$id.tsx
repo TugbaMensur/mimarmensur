@@ -152,25 +152,19 @@ function ProjectDetail() {
       </div>
 
       <div className="mt-20 space-y-12">
-        {(n === 8 ? [1, 2, 3, 4, 5] : [1, 2, 3, 4]).map((i) => (
+        {[1, 2, 3, 4].map((i) => (
           <figure key={i} className="aspect-[16/10] bg-muted relative overflow-hidden">
-            {n === 8 ? (
-              <img
-                src={project8Images[i - 1]}
-                alt={`Active Thought — Image ${i.toString().padStart(2, "0")}`}
-                className="absolute inset-0 w-full h-full object-contain"
-                loading="lazy"
-              />
-            ) : (
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="font-display text-sm uppercase tracking-[0.3em] text-muted-foreground/60">
-                  Image {i.toString().padStart(2, "0")} — Placeholder
-                </span>
-              </div>
-            )}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <span className="font-display text-sm uppercase tracking-[0.3em] text-muted-foreground/60">
+                Image {i.toString().padStart(2, "0")} — Placeholder
+              </span>
+            </div>
           </figure>
         ))}
       </div>
+      </>
+      )}
+
 
       <nav className="mt-24 pt-12 border-t border-border flex items-center justify-between text-xs uppercase tracking-[0.3em]">
         {prev ? (
