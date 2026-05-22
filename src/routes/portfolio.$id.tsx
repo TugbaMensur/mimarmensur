@@ -86,7 +86,7 @@ function Meta({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex justify-between border-b border-border pb-2">
       <span className="text-xs uppercase tracking-[0.25em] text-muted-foreground">{label}</span>
-      <span>{value}</span>
+      <span className="text-right">{value}</span>
     </div>
   );
 }
