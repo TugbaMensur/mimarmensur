@@ -3,6 +3,11 @@ import { BackButton } from "@/components/BackButton";
 import cover1 from "@/assets/cover-1.jpg";
 import cover2 from "@/assets/cover-2.jpg";
 import cover3 from "@/assets/cover-3.jpg";
+import cover4 from "@/assets/cover-4.jpg";
+import cover5 from "@/assets/cover-5.jpg";
+import cover6 from "@/assets/cover-6.jpg";
+import cover7 from "@/assets/cover-7.jpg";
+import cover8 from "@/assets/cover-8.jpg";
 
 
 export const Route = createFileRoute("/portfolio/")({
@@ -16,12 +21,13 @@ export const Route = createFileRoute("/portfolio/")({
 });
 
 const years = [2017, 2016, 2014, 2020, 2021, 2022, 2023, 2024];
+const covers = [cover1, cover2, cover3, cover4, cover5, cover6, cover7, cover8];
 const projects = Array.from({ length: 8 }, (_, i) => ({
   id: String(i + 1),
   name: `Project ${i + 1}`,
   year: years[i],
   type: ["Sport Complex", "Library", "Survey", "Urban", "Pavilion", "Interior", "Mixed-use", "Concept"][i],
-  cover: i === 0 ? cover1 : i === 1 ? cover2 : i === 2 ? cover3 : null,
+  cover: covers[i],
 }));
 
 
