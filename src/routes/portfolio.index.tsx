@@ -24,9 +24,9 @@ const years = [2017, 2016, 2014, 2020, 2021, 2022, 2023, 2024];
 const covers = [cover1, cover2, cover3, cover4, cover5, cover6, cover7, cover8];
 const projects = Array.from({ length: 8 }, (_, i) => ({
   id: String(i + 1),
-  name: i === 2 ? "SURVEY AND EVALUATION" : `Project ${i + 1}`,
+  name: `Project ${i + 1}`,
   year: years[i],
-  type: ["Sport Complex", "Library", "Survey", "Urban", "Pavilion", "Interior", "Mixed-use", "Concept"][i],
+  type: ["Sport Complex", "Library", "Survey and Documentation", "Urban", "Pavilion", "Interior", "Mixed-use", "Concept"][i],
   cover: covers[i],
 }));
 
