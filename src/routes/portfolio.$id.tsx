@@ -66,53 +66,26 @@ function ProjectDetail() {
             </div>
           </section>
 
-          {/* Hero plate — first image, full bleed, no chrome */}
-          <figure className="mt-32 relative">
-            <img
-              src={project8Images[0]}
-              alt="Active Thought — Plate 01"
-              className="w-full h-auto object-contain"
-            />
-            <figcaption className="mt-6 flex items-baseline justify-between text-[10px] uppercase tracking-[0.4em] text-muted-foreground">
-              <span>Plate 01 — Cover</span>
-              <span>Graphite on paper</span>
-            </figcaption>
-          </figure>
-
-          {/* Plates 02 & 03 — direct image presentation */}
-          <section className="mt-40 grid md:grid-cols-2 gap-12">
-            <figure>
-              <img src={project8Images[1]} alt="Active Thought — Plate 02" className="w-full h-auto object-contain" />
-            </figure>
-            <figure>
-              <img src={project8Images[2]} alt="Active Thought — Plate 03" className="w-full h-auto object-contain" />
-            </figure>
+          {/* Plates — uniform presentation */}
+          <section className="mt-32 space-y-24">
+            {project8Images.map((src, i) => (
+              <figure key={i} className="md:max-w-[1100px] md:mx-auto">
+                <img
+                  src={src}
+                  alt={`Active Thought — Plate ${String(i + 1).padStart(2, "0")}`}
+                  className="w-full h-auto object-contain"
+                />
+                <figcaption className="mt-4 text-[10px] uppercase tracking-[0.4em] text-muted-foreground text-center">
+                  Plate {String(i + 1).padStart(2, "0")}
+                </figcaption>
+              </figure>
+            ))}
           </section>
-
-          {/* Plate 04 — enlarged organic form, full width, ample air */}
-          <figure className="mt-40 -mx-2 md:-mx-12">
-            <img
-              src={project8Images[3]}
-              alt="Active Thought — Plate 04, organic form study"
-              className="w-full h-auto object-contain"
-            />
-            <figcaption className="mt-6 px-2 md:px-12 flex items-baseline justify-between text-[10px] uppercase tracking-[0.4em] text-muted-foreground">
-              <span>Plate 04 — Organic form study</span>
-              <span>Line work, ink</span>
-            </figcaption>
-          </figure>
-
-          {/* Plate 05 — closing plate, generous breathing room */}
-          <figure className="mt-40 md:max-w-[78%] md:mx-auto">
-            <img src={project8Images[4]} alt="Active Thought — Plate 05" className="w-full h-auto object-contain" />
-            <figcaption className="mt-6 text-[10px] uppercase tracking-[0.4em] text-muted-foreground text-center">
-              Plate 05 — Coda
-            </figcaption>
-          </figure>
 
           <p className="mt-32 text-center text-[10px] uppercase tracking-[0.5em] text-muted-foreground">
             End of archive · Active Thought
           </p>
+
         </>
       ) : (
       <>
