@@ -28,7 +28,7 @@ function ProjectDetail() {
         <div className="md:col-span-4 md:col-start-9 space-y-3 text-sm">
           <Meta label="Year" value={`${[2017, 2016, 2014, 2015, 2018, 2019, 2023, 2025][n - 1]}`} />
           <Meta label="Location" value={["İstanbul", "Istanbul", "Istanbul", "Istanbul", "Istanbul", "Istanbul", "Istanbul", "Istanbul"][n - 1]} />
-          <Meta label="Type" value={["Sport Complex", "Library", "Survey", "Home Office", "Installation", "Installation", "Story Book", "Concept"][n - 1]} />
+          <Meta label="Type" value={["Sport Complex", "Library", "Survey", "Home Office", "Independent Research", "Installation", "Story Book", "Concept"][n - 1]} />
           <Meta label="Status" value={["Student Project", "Student Project", "Student Project", "Student Project", "Independent Research", "Student Project", "Professional Work", "Professional Work"][n - 1]} />
         </div>
       </header>
