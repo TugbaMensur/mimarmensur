@@ -22,10 +22,13 @@ function ProjectDetail() {
   const prev = n > 1 ? String(n - 1) : null;
   const next = n < 8 ? String(n + 1) : null;
 
+  const isArchive = n === 8;
+  const titles = ["Beylerbeyi Sport Complex", "Impasse Library", "Survey Of Sultan Reşad Khan Tomb", "Implementation Project Of A Photographer House", "Losing Home: Metropolis, Dwelling, Body", "Instant Installation", "Sea Horse and Secret Underwater Cave", "Active Thought"];
+
   return (
     <>
       <BackButton to="/portfolio" label="Portfolio" />
-    <article className="max-w-[1200px] mx-auto px-8 py-24">
+    <article className={isArchive ? "max-w-[1600px] mx-auto px-6 md:px-16 py-24" : "max-w-[1200px] mx-auto px-8 py-24"}>
 
       <header className="mt-12 grid md:grid-cols-12 gap-8 pb-16 border-b border-border">
         <div className="md:col-span-7">
@@ -40,9 +43,97 @@ function ProjectDetail() {
         </div>
       </header>
 
+      {isArchive ? (
+        <>
+          {/* Title + intro paragraph as an editorial spread */}
+          <section className="mt-24 grid md:grid-cols-12 gap-x-12 gap-y-10">
+            <div className="md:col-span-5 md:sticky md:top-24 self-start">
+              <p className="text-[10px] uppercase tracking-[0.4em] text-muted-foreground mb-6">— Archive No. 08</p>
+              <h2 className="font-display text-5xl md:text-6xl lg:text-7xl leading-[0.95] text-accent-mode">
+                Active<br />Thought
+              </h2>
+              <p className="mt-10 text-[11px] uppercase tracking-[0.3em] text-muted-foreground">
+                Sketches · 5 min – 4 hours
+              </p>
+            </div>
+            <div className="md:col-span-6 md:col-start-7">
+              <p className="font-display text-2xl md:text-3xl leading-[1.45] text-foreground/90">
+                A series of sketches focused on the relationship between the process of searching for form and active thought.
+              </p>
+              <p className="mt-10 text-base leading-[1.95] text-foreground/70 max-w-prose">
+                These drawings, which take approximately 5 minutes to 4 hours, are considered components of the flow of thought specific to that time. They are productions that accompany thoughts not directly related to design — such as reminiscing about a memory or a character — rather than questions like where the entrance should be or how the circulation route should be planned.
+              </p>
+            </div>
+          </section>
+
+          {/* Hero plate — first image, full bleed, no chrome */}
+          <figure className="mt-32 relative">
+            <img
+              src={project8Images[0]}
+              alt="Active Thought — Plate 01"
+              className="w-full h-auto object-contain"
+            />
+            <figcaption className="mt-6 flex items-baseline justify-between text-[10px] uppercase tracking-[0.4em] text-muted-foreground">
+              <span>Plate 01 — Cover</span>
+              <span>Graphite on paper</span>
+            </figcaption>
+          </figure>
+
+          {/* Plates 02 & 03 — asymmetric pair with whitespace */}
+          <section className="mt-40 grid md:grid-cols-12 gap-x-12 gap-y-20">
+            <figure className="md:col-span-8">
+              <img src={project8Images[1]} alt="Active Thought — Plate 02" className="w-full h-auto object-contain" />
+              <figcaption className="mt-4 text-[10px] uppercase tracking-[0.4em] text-muted-foreground">Plate 02</figcaption>
+            </figure>
+            <div className="md:col-span-3 md:col-start-10 md:pt-16">
+              <p className="text-[10px] uppercase tracking-[0.4em] text-accent-mode mb-4">I.</p>
+              <p className="font-display text-lg leading-[1.6] text-foreground/80 italic">
+                Drawings as components of the flow of thought specific to that time.
+              </p>
+            </div>
+
+            <div className="md:col-span-3 md:col-start-2 md:row-start-2 md:pt-24">
+              <p className="text-[10px] uppercase tracking-[0.4em] text-accent-mode mb-4">II.</p>
+              <p className="font-display text-lg leading-[1.6] text-foreground/80 italic">
+                Reminiscing a memory, a character — not the entrance, not the circulation route.
+              </p>
+            </div>
+            <figure className="md:col-span-8 md:col-start-5 md:row-start-2">
+              <img src={project8Images[2]} alt="Active Thought — Plate 03" className="w-full h-auto object-contain" />
+              <figcaption className="mt-4 text-[10px] uppercase tracking-[0.4em] text-muted-foreground">Plate 03</figcaption>
+            </figure>
+          </section>
+
+          {/* Plate 04 — enlarged organic form, full width, ample air */}
+          <figure className="mt-40 -mx-2 md:-mx-12">
+            <img
+              src={project8Images[3]}
+              alt="Active Thought — Plate 04, organic form study"
+              className="w-full h-auto object-contain"
+            />
+            <figcaption className="mt-6 px-2 md:px-12 flex items-baseline justify-between text-[10px] uppercase tracking-[0.4em] text-muted-foreground">
+              <span>Plate 04 — Organic form study</span>
+              <span>Line work, ink</span>
+            </figcaption>
+          </figure>
+
+          {/* Plate 05 — closing plate, generous breathing room */}
+          <figure className="mt-40 md:max-w-[78%] md:mx-auto">
+            <img src={project8Images[4]} alt="Active Thought — Plate 05" className="w-full h-auto object-contain" />
+            <figcaption className="mt-6 text-[10px] uppercase tracking-[0.4em] text-muted-foreground text-center">
+              Plate 05 — Coda
+            </figcaption>
+          </figure>
+
+          <p className="mt-32 text-center text-[10px] uppercase tracking-[0.5em] text-muted-foreground">
+            End of archive · Active Thought
+          </p>
+        </>
+      ) : (
+      <>
       <div className="mt-16 max-w-2xl">
         <p className="font-display text-xl leading-relaxed">
-          <strong className="text-accent-mode font-normal">{["Beylerbeyi Sport Complex", "Impasse Library", "Survey Of Sultan Reşad Khan Tomb", "Implementation Project Of A Photographer House", "Losing Home: Metropolis, Dwelling, Body", "Instant Installation", "Sea Horse and Secret Underwater Cave", "Active Thought"][n - 1]}</strong>
+          <strong className="text-accent-mode font-normal">{titles[n - 1]}</strong>
         </p>
         <p className="mt-6 text-base leading-[1.9] text-foreground/80">
           {[
