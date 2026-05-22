@@ -112,11 +112,11 @@
     background-color: var(--accent-color);
     margin-right: 1rem;
     flex-shrink: 0;
+  }
   .hover-neon {
     transition: color 0.4s ease;
   }
   .hover-neon:hover {
-    color: #39E75F;
+    color: var(--accent-hover);
   }
-}
 }
