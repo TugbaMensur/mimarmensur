@@ -16,8 +16,8 @@ export const Route = createFileRoute("/portfolio/")({
 const projects = Array.from({ length: 8 }, (_, i) => ({
   id: String(i + 1),
   name: `Project ${i + 1}`,
-  year: 2018 + i,
-  type: ["Residential", "Public", "Cultural", "Urban", "Pavilion", "Interior", "Mixed-use", "Concept"][i],
+  year: 2017 + i,
+  type: ["Sport Complex", "Public", "Cultural", "Urban", "Pavilion", "Interior", "Mixed-use", "Concept"][i],
   cover: i === 0 ? cover1 : null,
 }));
 
