@@ -66,16 +66,18 @@ function ProjectDetail() {
             </div>
           </section>
 
-          {/* Plates — uniform presentation */}
-          <section className="mt-32 space-y-24">
+          {/* Plates — uniform presentation with generous breathing room */}
+          <section className="mt-40 space-y-32 md:space-y-40 px-4 sm:px-8 md:px-16 lg:px-24">
             {project8Images.map((src, i) => (
-              <figure key={i} className="md:max-w-[1100px] md:mx-auto">
-                <img
-                  src={src}
-                  alt={`Active Thought — Plate ${String(i + 1).padStart(2, "0")}`}
-                  className="w-full h-auto object-contain"
-                />
-                <figcaption className="mt-4 text-[10px] uppercase tracking-[0.4em] text-muted-foreground text-center">
+              <figure key={i} className="max-w-[900px] mx-auto py-8 md:py-12">
+                <div className="px-4 sm:px-8 md:px-12">
+                  <img
+                    src={src}
+                    alt={`Active Thought — Plate ${String(i + 1).padStart(2, "0")}`}
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+                <figcaption className="mt-10 md:mt-14 text-[10px] uppercase tracking-[0.4em] text-muted-foreground text-center">
                   Plate {String(i + 1).padStart(2, "0")}
                 </figcaption>
               </figure>
