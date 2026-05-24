@@ -65,6 +65,8 @@ import project1_7 from "@/assets/project1-7.png";
 import project1_8 from "@/assets/project1-8.png";
 import project1_9 from "@/assets/project1-9.png";
 import project1_10 from "@/assets/project1-10.png";
+import project1_11 from "@/assets/project1-11.png";
+import project1_12 from "@/assets/project1-12.png";
 
 const project8Images = [project8_1, project8_2, project8_3, project8_4, project8_5];
 const project7Images = [project7_1, project7_2, project7_3, project7_4, project7_5, project7_6, project7_7, project7_8, project7_9];
@@ -73,7 +75,7 @@ const project5Images = [project5_1, project5_2, project5_3, project5_4, project5
 const project4Images = [project4_1, project4_2, project4_3];
 const project3Images = [project3_1, project3_2, project3_3, project3_4, project3_5, project3_6, project3_7, project3_8];
 const project2Images = [project2_1, project2_2, project2_3, project2_4, project2_5, project2_6, project2_7, project2_8, project2_9, project2_10, project2_11, project2_12];
-const project1Images = [project1_1, project1_2, project1_3, project1_4, project1_5, project1_6, project1_7, project1_8, project1_9, project1_10];
+const project1Images = [project1_1, project1_2, project1_3, project1_4, project1_5, project1_6, project1_7, project1_8, project1_9, project1_10, project1_11, project1_12];
 
 export const Route = createFileRoute("/portfolio/$id")({
   component: ProjectDetail,
