@@ -55,6 +55,16 @@ import project2_9 from "@/assets/project2-9.png";
 import project2_10 from "@/assets/project2-10.png";
 import project2_11 from "@/assets/project2-11.png";
 import project2_12 from "@/assets/project2-12.png";
+import project1_1 from "@/assets/project1-1.png";
+import project1_2 from "@/assets/project1-2.png";
+import project1_3 from "@/assets/project1-3.jpg";
+import project1_4 from "@/assets/project1-4.png";
+import project1_5 from "@/assets/project1-5.jpg";
+import project1_6 from "@/assets/project1-6.png";
+import project1_7 from "@/assets/project1-7.png";
+import project1_8 from "@/assets/project1-8.png";
+import project1_9 from "@/assets/project1-9.png";
+import project1_10 from "@/assets/project1-10.png";
 
 const project8Images = [project8_1, project8_2, project8_3, project8_4, project8_5];
 const project7Images = [project7_1, project7_2, project7_3, project7_4, project7_5, project7_6, project7_7, project7_8, project7_9];
@@ -63,6 +73,7 @@ const project5Images = [project5_1, project5_2, project5_3, project5_4, project5
 const project4Images = [project4_1, project4_2, project4_3];
 const project3Images = [project3_1, project3_2, project3_3, project3_4, project3_5, project3_6, project3_7, project3_8];
 const project2Images = [project2_1, project2_2, project2_3, project2_4, project2_5, project2_6, project2_7, project2_8, project2_9, project2_10, project2_11, project2_12];
+const project1Images = [project1_1, project1_2, project1_3, project1_4, project1_5, project1_6, project1_7, project1_8, project1_9, project1_10];
 
 export const Route = createFileRoute("/portfolio/$id")({
   component: ProjectDetail,
@@ -89,7 +100,7 @@ function ProjectDetail() {
   }, [lightboxSrc]);
   const openLightbox = (src: string) => { setZoom(1); setLightboxSrc(src); };
 
-  const isArchive = n === 8 || n === 7 || n === 6 || n === 5 || n === 4 || n === 3 || n === 2;
+  const isArchive = n === 8 || n === 7 || n === 6 || n === 5 || n === 4 || n === 3 || n === 2 || n === 1;
   const archiveConfig = n === 8
     ? {
         no: "08",
@@ -156,7 +167,8 @@ function ProjectDetail() {
         endLabel: "End of archive · Survey of Sultan Reşad Khan Tomb",
         altPrefix: "Survey of Sultan Reşad Khan Tomb",
       }
-    : {
+    : n === 2
+    ? {
         no: "02",
         titleLines: ["Impasse", "Library"],
         sublabel: "Mimar Sinan Fine Art University · Spring 2015–2016 · Architectural Project IV · Supervised by Mete Ünal & Haluk Uluşan",
@@ -165,6 +177,16 @@ function ProjectDetail() {
         images: project2Images,
         endLabel: "End of archive · Impasse Library",
         altPrefix: "Impasse Library",
+      }
+    : {
+        no: "01",
+        titleLines: ["Beylerbeyi", "Sport", "Complex"],
+        sublabel: "Mimar Sinan Fine Arts University · Spring 2016–2017 · Final Project",
+        lede: "A sports complex in Beylerbeyi that begins from the etymology of the word sport and reads the introverted character of the district through history.",
+        body: "The study began with the investigation of the meanings that the word sport has been given throughout the ages. Etymologically, sport — des (away) + porter (to carry) — means to keep the mind away from serious issues; it includes both bodily and mental exercises and activities carried out individually or collectively within certain rules. Due to the multitude of concepts and phrases that can be included in the content of sports activities, a network map grouped into three categories was created to refer to the history of sports, their nature, and the relationship they establish with the body and mind. The sports complex was designed in Beylerbeyi, one of the districts of the Bosphorus. Its transformation throughout history was examined: a transition area in the pre-Byzantine period, Beylerbeyi has maintained its introverted character. The complex aims to combine this character with sports that can be played individually and collectively. The design is a center that includes indoor and outdoor sports areas and an Olympic pool with a capacity of approximately 2,500 spectators. This update was supported by the master's theses Sports Policies of the European Union (2019) and The Formation and Improvement of Beylerbeyi Pier Square in the Historical Process (2018).",
+        images: project1Images,
+        endLabel: "End of archive · Beylerbeyi Sport Complex",
+        altPrefix: "Beylerbeyi Sport Complex",
       };
   const titles = ["Beylerbeyi Sport Complex", "Impasse Library", "Survey Of Sultan Reşad Khan Tomb", "Implementation Project Of A Photographer House", "Losing Home: Metropolis, Dwelling, Body", "Instant Installation", "Sea Horse and Secret Underwater Cave", "Active Thought"];
 
