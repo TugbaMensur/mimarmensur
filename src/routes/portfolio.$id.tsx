@@ -4,8 +4,9 @@ import project8_1 from "@/assets/project8-1.png";
 import project8_2 from "@/assets/project8-2.png";
 import project8_3 from "@/assets/project8-3.png";
 import project8_4 from "@/assets/project8-4.png";
+import project8_5 from "@/assets/project8-5.png";
 
-const project8Images = [project8_1, project8_2, project8_3, project8_4];
+const project8Images = [project8_1, project8_2, project8_3, project8_4, project8_5];
 
 export const Route = createFileRoute("/portfolio/$id")({
   component: ProjectDetail,
