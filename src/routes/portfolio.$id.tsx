@@ -170,14 +170,6 @@ function ProjectDetail() {
 
         </>
       ) : (
-          </section>
-
-          <p className="mt-32 text-center text-[10px] uppercase tracking-[0.5em] text-muted-foreground">
-            {archiveConfig.endLabel}
-          </p>
-
-        </>
-      ) : (
       <>
       <div className="mt-16 max-w-2xl">
         <p className="font-display text-xl leading-relaxed">
