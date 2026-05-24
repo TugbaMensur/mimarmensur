@@ -211,7 +211,7 @@ function ProjectDetail() {
       </div>
 
       <div className="mt-20 space-y-12">
-        {[1, 2, 3, 4, 5, 6, 7].map((i) => (
+        {Array.from({ length: { 1: 12, 2: 12, 3: 8, 4: 3 }[n as 1|2|3|4] ?? 7 }, (_, idx) => idx + 1).map((i) => (
           <figure key={i} className="aspect-[16/10] bg-muted relative overflow-hidden">
             <div className="absolute inset-0 flex items-center justify-center">
               <span className="font-display text-sm uppercase tracking-[0.3em] text-muted-foreground/60">
