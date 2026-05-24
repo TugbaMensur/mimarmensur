@@ -35,12 +35,21 @@ import project5_7 from "@/assets/project5-7.jpg";
 import project4_1 from "@/assets/project4-1.png";
 import project4_2 from "@/assets/project4-2.png";
 import project4_3 from "@/assets/project4-3.png";
+import project3_1 from "@/assets/project3-1.png";
+import project3_2 from "@/assets/project3-2.jpg";
+import project3_3 from "@/assets/project3-3.png";
+import project3_4 from "@/assets/project3-4.png";
+import project3_5 from "@/assets/project3-5.png";
+import project3_6 from "@/assets/project3-6.png";
+import project3_7 from "@/assets/project3-7.png";
+import project3_8 from "@/assets/project3-8.png";
 
 const project8Images = [project8_1, project8_2, project8_3, project8_4, project8_5];
 const project7Images = [project7_1, project7_2, project7_3, project7_4, project7_5, project7_6, project7_7, project7_8, project7_9];
 const project6Images = [project6_1, project6_2, project6_3, project6_4, project6_5, project6_6, project6_7, project6_8, project6_9];
 const project5Images = [project5_1, project5_2, project5_3, project5_4, project5_5, project5_6, project5_7];
 const project4Images = [project4_1, project4_2, project4_3];
+const project3Images = [project3_1, project3_2, project3_3, project3_4, project3_5, project3_6, project3_7, project3_8];
 
 export const Route = createFileRoute("/portfolio/$id")({
   component: ProjectDetail,
