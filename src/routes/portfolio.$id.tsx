@@ -219,6 +219,54 @@ function ProjectDetail() {
         ) : <span />}
       </nav>
     </article>
+    {lightboxSrc && (
+      <div
+        className="fixed inset-0 z-50 bg-background/95 backdrop-blur-sm flex items-center justify-center"
+        onClick={() => setLightboxSrc(null)}
+      >
+        <div className="absolute top-4 right-4 flex items-center gap-2 z-10">
+          <button
+            type="button"
+            onClick={(e) => { e.stopPropagation(); setZoom((z) => Math.max(0.5, +(z - 0.25).toFixed(2))); }}
+            className="h-10 w-10 inline-flex items-center justify-center rounded-full border border-border bg-background/80 hover:bg-accent hover:text-accent-foreground transition"
+            aria-label="Zoom out"
+          >
+            <ZoomOut size={18} />
+          </button>
+          <span className="min-w-[3rem] text-center text-xs uppercase tracking-[0.2em] text-muted-foreground">
+            {Math.round(zoom * 100)}%
+          </span>
+          <button
+            type="button"
+            onClick={(e) => { e.stopPropagation(); setZoom((z) => Math.min(5, +(z + 0.25).toFixed(2))); }}
+            className="h-10 w-10 inline-flex items-center justify-center rounded-full border border-border bg-background/80 hover:bg-accent hover:text-accent-foreground transition"
+            aria-label="Zoom in"
+          >
+            <ZoomIn size={18} />
+          </button>
+          <button
+            type="button"
+            onClick={(e) => { e.stopPropagation(); setLightboxSrc(null); }}
+            className="ml-2 h-10 w-10 inline-flex items-center justify-center rounded-full border border-border bg-background/80 hover:bg-accent hover:text-accent-foreground transition"
+            aria-label="Close"
+          >
+            <X size={18} />
+          </button>
+        </div>
+        <div
+          className="w-full h-full overflow-auto flex items-center justify-center p-8"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <img
+            src={lightboxSrc}
+            alt="Zoomed plate"
+            style={{ transform: `scale(${zoom})`, transformOrigin: "center center" }}
+            className="max-w-none transition-transform duration-150 select-none"
+            draggable={false}
+          />
+        </div>
+      </div>
+    )}
     </>
   );
 }
