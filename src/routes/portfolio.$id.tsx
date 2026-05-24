@@ -43,6 +43,16 @@ import project3_5 from "@/assets/project3-5.png";
 import project3_6 from "@/assets/project3-6.png";
 import project3_7 from "@/assets/project3-7.png";
 import project3_8 from "@/assets/project3-8.png";
+import project2_1 from "@/assets/project2-1.png";
+import project2_2 from "@/assets/project2-2.jpg";
+import project2_3 from "@/assets/project2-3.png";
+import project2_4 from "@/assets/project2-4.png";
+import project2_5 from "@/assets/project2-5.jpg";
+import project2_6 from "@/assets/project2-6.png";
+import project2_7 from "@/assets/project2-7.png";
+import project2_8 from "@/assets/project2-8.png";
+import project2_9 from "@/assets/project2-9.png";
+import project2_10 from "@/assets/project2-10.png";
 
 const project8Images = [project8_1, project8_2, project8_3, project8_4, project8_5];
 const project7Images = [project7_1, project7_2, project7_3, project7_4, project7_5, project7_6, project7_7, project7_8, project7_9];
@@ -50,6 +60,7 @@ const project6Images = [project6_1, project6_2, project6_3, project6_4, project6
 const project5Images = [project5_1, project5_2, project5_3, project5_4, project5_5, project5_6, project5_7];
 const project4Images = [project4_1, project4_2, project4_3];
 const project3Images = [project3_1, project3_2, project3_3, project3_4, project3_5, project3_6, project3_7, project3_8];
+const project2Images = [project2_1, project2_2, project2_3, project2_4, project2_5, project2_6, project2_7, project2_8, project2_9, project2_10];
 
 export const Route = createFileRoute("/portfolio/$id")({
   component: ProjectDetail,
@@ -76,7 +87,7 @@ function ProjectDetail() {
   }, [lightboxSrc]);
   const openLightbox = (src: string) => { setZoom(1); setLightboxSrc(src); };
 
-  const isArchive = n === 8 || n === 7 || n === 6 || n === 5 || n === 4 || n === 3;
+  const isArchive = n === 8 || n === 7 || n === 6 || n === 5 || n === 4 || n === 3 || n === 2;
   const archiveConfig = n === 8
     ? {
         no: "08",
@@ -132,7 +143,8 @@ function ProjectDetail() {
         endLabel: "End of archive · Implementation Project of a Photographer House",
         altPrefix: "Implementation Project of a Photographer House",
       }
-    : {
+    : n === 3
+    ? {
         no: "03",
         titleLines: ["Survey of", "Sultan Reşad", "Khan Tomb"],
         sublabel: "Mimar Sinan Fine Arts University · Spring 2013–2014 · Supervised by Adile Binnur Kıraç",
@@ -141,6 +153,16 @@ function ProjectDetail() {
         images: project3Images,
         endLabel: "End of archive · Survey of Sultan Reşad Khan Tomb",
         altPrefix: "Survey of Sultan Reşad Khan Tomb",
+      }
+    : {
+        no: "02",
+        titleLines: ["Impasse", "Library"],
+        sublabel: "Mimar Sinan Fine Art University · Spring 2015–2016 · Architectural Project IV · Supervised by Mete Ünal & Haluk Uluşan",
+        lede: "An extension to the existing Atatürk Library on the edge of Taksim Square — a project that reads the square through its breaking points and replies with a modular mass.",
+        body: "Taksim Square is a landmark from past to now with its geographic character, settlement texture, socio-cultural structure and socio-economical roles. The analysis section focuses on two main questions: Does the square have a border? And: Is the square a political representation tool fed by the cycle of destruction, reconstruction and new additions of the structures that characterize it throughout history? The structure formed by these breaking points is expressed through a collage. In the final product, Taksim Square is approached holistically and the project area is focused on as one of the design decisions taken at the square scale. The design is named after the adjacent street (Kütüphane Çıkmazı — Impasse Library) and works as an extension of the existing library, referencing its characteristic features through the idea of the module.",
+        images: project2Images,
+        endLabel: "End of archive · Impasse Library",
+        altPrefix: "Impasse Library",
       };
   const titles = ["Beylerbeyi Sport Complex", "Impasse Library", "Survey Of Sultan Reşad Khan Tomb", "Implementation Project Of A Photographer House", "Losing Home: Metropolis, Dwelling, Body", "Instant Installation", "Sea Horse and Secret Underwater Cave", "Active Thought"];
 
@@ -194,21 +216,18 @@ function ProjectDetail() {
                 <div className="px-4 sm:px-8 md:px-12">
                   <button
                     type="button"
-                    onClick={() => (n === 3 || n === 4 || n === 5 || n === 6 || n === 7 || n === 8) && openLightbox(src)}
-                    className={`block w-full ${(n === 3 || n === 4 || n === 5 || n === 6 || n === 7 || n === 8) ? "cursor-zoom-in group relative" : ""}`}
-                    aria-label={(n === 3 || n === 4 || n === 5 || n === 6 || n === 7 || n === 8) ? "Zoom image" : undefined}
-                    disabled={n !== 3 && n !== 4 && n !== 5 && n !== 6 && n !== 7 && n !== 8}
+                    onClick={() => openLightbox(src)}
+                    className="block w-full cursor-zoom-in group relative"
+                    aria-label="Zoom image"
                   >
                     <img
                       src={src}
                       alt={`${archiveConfig.altPrefix} — Plate ${String(i + 1).padStart(2, "0")}`}
                       className="w-full h-auto object-contain"
                     />
-                    {(n === 3 || n === 4 || n === 5 || n === 6 || n === 7 || n === 8) && (
-                      <span className="absolute top-2 right-2 inline-flex items-center gap-1 rounded-full bg-background/80 backdrop-blur px-2.5 py-1 text-[10px] uppercase tracking-[0.2em] text-foreground opacity-0 group-hover:opacity-100 transition-opacity">
-                        <ZoomIn size={12} /> Zoom
-                      </span>
-                    )}
+                    <span className="absolute top-2 right-2 inline-flex items-center gap-1 rounded-full bg-background/80 backdrop-blur px-2.5 py-1 text-[10px] uppercase tracking-[0.2em] text-foreground opacity-0 group-hover:opacity-100 transition-opacity">
+                      <ZoomIn size={12} /> Zoom
+                    </span>
                   </button>
                 </div>
                 <figcaption className="mt-10 md:mt-14 text-[10px] uppercase tracking-[0.4em] text-muted-foreground text-center">
