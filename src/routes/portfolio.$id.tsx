@@ -1,5 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { BackButton } from "@/components/BackButton";
+import { useState, useEffect } from "react";
+import { ZoomIn, ZoomOut, X } from "lucide-react";
 import project8_1 from "@/assets/project8-1.png";
 import project8_2 from "@/assets/project8-2.png";
 import project8_3 from "@/assets/project8-3.png";
@@ -41,6 +43,17 @@ function ProjectDetail() {
   const { n } = Route.useLoaderData();
   const prev = n > 1 ? String(n - 1) : null;
   const next = n < 8 ? String(n + 1) : null;
+
+  const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
+  const [zoom, setZoom] = useState(1);
+  useEffect(() => {
+    if (!lightboxSrc) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setLightboxSrc(null); };
+    window.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => { window.removeEventListener("keydown", onKey); document.body.style.overflow = ""; };
+  }, [lightboxSrc]);
+  const openLightbox = (src: string) => { setZoom(1); setLightboxSrc(src); };
 
   const isArchive = n === 8 || n === 7 || n === 6;
   const archiveConfig = n === 8
@@ -125,11 +138,24 @@ function ProjectDetail() {
             {archiveConfig.images.map((src, i) => (
               <figure key={i} className="max-w-[900px] mx-auto py-8 md:py-12">
                 <div className="px-4 sm:px-8 md:px-12">
-                  <img
-                    src={src}
-                    alt={`${archiveConfig.altPrefix} — Plate ${String(i + 1).padStart(2, "0")}`}
-                    className="w-full h-auto object-contain"
-                  />
+                  <button
+                    type="button"
+                    onClick={() => n === 6 && openLightbox(src)}
+                    className={`block w-full ${n === 6 ? "cursor-zoom-in group relative" : ""}`}
+                    aria-label={n === 6 ? "Zoom image" : undefined}
+                    disabled={n !== 6}
+                  >
+                    <img
+                      src={src}
+                      alt={`${archiveConfig.altPrefix} — Plate ${String(i + 1).padStart(2, "0")}`}
+                      className="w-full h-auto object-contain"
+                    />
+                    {n === 6 && (
+                      <span className="absolute top-2 right-2 inline-flex items-center gap-1 rounded-full bg-background/80 backdrop-blur px-2.5 py-1 text-[10px] uppercase tracking-[0.2em] text-foreground opacity-0 group-hover:opacity-100 transition-opacity">
+                        <ZoomIn size={12} /> Zoom
+                      </span>
+                    )}
+                  </button>
                 </div>
                 <figcaption className="mt-10 md:mt-14 text-[10px] uppercase tracking-[0.4em] text-muted-foreground text-center">
                   Plate {String(i + 1).padStart(2, "0")}
@@ -193,6 +219,54 @@ function ProjectDetail() {
         ) : <span />}
       </nav>
     </article>
+    {lightboxSrc && (
+      <div
+        className="fixed inset-0 z-50 bg-background/95 backdrop-blur-sm flex items-center justify-center"
+        onClick={() => setLightboxSrc(null)}
+      >
+        <div className="absolute top-4 right-4 flex items-center gap-2 z-10">
+          <button
+            type="button"
+            onClick={(e) => { e.stopPropagation(); setZoom((z) => Math.max(0.5, +(z - 0.25).toFixed(2))); }}
+            className="h-10 w-10 inline-flex items-center justify-center rounded-full border border-border bg-background/80 hover:bg-accent hover:text-accent-foreground transition"
+            aria-label="Zoom out"
+          >
+            <ZoomOut size={18} />
+          </button>
+          <span className="min-w-[3rem] text-center text-xs uppercase tracking-[0.2em] text-muted-foreground">
+            {Math.round(zoom * 100)}%
+          </span>
+          <button
+            type="button"
+            onClick={(e) => { e.stopPropagation(); setZoom((z) => Math.min(5, +(z + 0.25).toFixed(2))); }}
+            className="h-10 w-10 inline-flex items-center justify-center rounded-full border border-border bg-background/80 hover:bg-accent hover:text-accent-foreground transition"
+            aria-label="Zoom in"
+          >
+            <ZoomIn size={18} />
+          </button>
+          <button
+            type="button"
+            onClick={(e) => { e.stopPropagation(); setLightboxSrc(null); }}
+            className="ml-2 h-10 w-10 inline-flex items-center justify-center rounded-full border border-border bg-background/80 hover:bg-accent hover:text-accent-foreground transition"
+            aria-label="Close"
+          >
+            <X size={18} />
+          </button>
+        </div>
+        <div
+          className="w-full h-full overflow-auto flex items-center justify-center p-8"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <img
+            src={lightboxSrc}
+            alt="Zoomed plate"
+            style={{ transform: `scale(${zoom})`, transformOrigin: "center center" }}
+            className="max-w-none transition-transform duration-150 select-none"
+            draggable={false}
+          />
+        </div>
+      </div>
+    )}
     </>
   );
 }
