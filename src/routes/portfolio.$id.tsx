@@ -67,7 +67,7 @@ function ProjectDetail() {
   }, [lightboxSrc]);
   const openLightbox = (src: string) => { setZoom(1); setLightboxSrc(src); };
 
-  const isArchive = n === 8 || n === 7 || n === 6 || n === 5;
+  const isArchive = n === 8 || n === 7 || n === 6 || n === 5 || n === 4;
   const archiveConfig = n === 8
     ? {
         no: "08",
@@ -101,7 +101,27 @@ function ProjectDetail() {
         endLabel: "End of archive · Instant Installation",
         altPrefix: "Instant Installation",
       }
+    : n === 5
+    ? {
+        no: "05",
+        titleLines: ["Losing Home:", "Metropolis,", "Dwelling, Body"],
+        sublabel: "AURA Istanbul · Fall 2018 · Supervised by Sinan Logie & Hande Tomboz",
+        lede: "A study pointing to the pains of the first physical contact with professional working life after architecture & city and regional planning education.",
+        body: "The metropolis is located at the center of a complex network of relationships that cannot be divided into home, work, transportation, and leisure time. What is the situation of a body in the time-performance interval covered by working life? Is there a family home left to return to? What else can home be but a place where the body feels relatively safe for 8–12 hours a day? Which of the 9 houses moved within the borders of the same metropolis was the most home-like? The method of the work is the use of representational tools of architecture and urbanism through bodily experiences — a series produced using different types of materials and techniques, including digital and analog collage.",
+        images: project5Images,
+        endLabel: "End of archive · Losing Home: Metropolis, Dwelling, Body",
+        altPrefix: "Losing Home",
+      }
     : {
+        no: "04",
+        titleLines: ["Implementation", "Project of a", "Photographer House"],
+        sublabel: "Mimar Sinan Fine Art University · Spring 2015–2016 · Supervised by Ayşegül Kuruç",
+        lede: "The design of a space combining a photographer's office and living quarters, resolved across three floors with a connecting gallery.",
+        body: "Within the scope of the Implementation Project, the design of a space that includes a photographer's office and living space has been offered. A dark room and a studio in the basement, an office on the ground floor, and a living space on the first floor have been solved. A gallery space that connects the floors and allows the interior of the space to receive light has been designed. The basement floor has a masonry system, the ground floor and the first floor have a steel system. The staircase plans and sections containing these solutions have been presented.",
+        images: project4Images,
+        endLabel: "End of archive · Implementation Project of a Photographer House",
+        altPrefix: "Implementation Project of a Photographer House",
+      }
         no: "05",
         titleLines: ["Losing Home:", "Metropolis,", "Dwelling, Body"],
         sublabel: "AURA Istanbul · Fall 2018 · Supervised by Sinan Logie & Hande Tomboz",
