@@ -121,15 +121,6 @@ function ProjectDetail() {
         images: project4Images,
         endLabel: "End of archive · Implementation Project of a Photographer House",
         altPrefix: "Implementation Project of a Photographer House",
-      }
-        no: "05",
-        titleLines: ["Losing Home:", "Metropolis,", "Dwelling, Body"],
-        sublabel: "AURA Istanbul · Fall 2018 · Supervised by Sinan Logie & Hande Tomboz",
-        lede: "A study pointing to the pains of the first physical contact with professional working life after architecture & city and regional planning education.",
-        body: "The metropolis is located at the center of a complex network of relationships that cannot be divided into home, work, transportation, and leisure time. What is the situation of a body in the time-performance interval covered by working life? Is there a family home left to return to? What else can home be but a place where the body feels relatively safe for 8–12 hours a day? Which of the 9 houses moved within the borders of the same metropolis was the most home-like? The method of the work is the use of representational tools of architecture and urbanism through bodily experiences — a series produced using different types of materials and techniques, including digital and analog collage.",
-        images: project5Images,
-        endLabel: "End of archive · Losing Home: Metropolis, Dwelling, Body",
-        altPrefix: "Losing Home",
       };
   const titles = ["Beylerbeyi Sport Complex", "Impasse Library", "Survey Of Sultan Reşad Khan Tomb", "Implementation Project Of A Photographer House", "Losing Home: Metropolis, Dwelling, Body", "Instant Installation", "Sea Horse and Secret Underwater Cave", "Active Thought"];
 
