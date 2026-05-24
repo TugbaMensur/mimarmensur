@@ -76,7 +76,7 @@ function ProjectDetail() {
   }, [lightboxSrc]);
   const openLightbox = (src: string) => { setZoom(1); setLightboxSrc(src); };
 
-  const isArchive = n === 8 || n === 7 || n === 6 || n === 5 || n === 4;
+  const isArchive = n === 8 || n === 7 || n === 6 || n === 5 || n === 4 || n === 3;
   const archiveConfig = n === 8
     ? {
         no: "08",
@@ -121,7 +121,8 @@ function ProjectDetail() {
         endLabel: "End of archive · Losing Home: Metropolis, Dwelling, Body",
         altPrefix: "Losing Home",
       }
-    : {
+    : n === 4
+    ? {
         no: "04",
         titleLines: ["Implementation", "Project of a", "Photographer House"],
         sublabel: "Mimar Sinan Fine Art University · Spring 2015–2016 · Supervised by Ayşegül Kuruç",
@@ -130,6 +131,16 @@ function ProjectDetail() {
         images: project4Images,
         endLabel: "End of archive · Implementation Project of a Photographer House",
         altPrefix: "Implementation Project of a Photographer House",
+      }
+    : {
+        no: "03",
+        titleLines: ["Survey of", "Sultan Reşad", "Khan Tomb"],
+        sublabel: "Mimar Sinan Fine Arts University · Spring 2013–2014 · Supervised by Adile Binnur Kıraç",
+        lede: "Survey drawings of the Sultan Reşad Han Tomb in Eyüpsultan — the resting place of Ottoman Sultan Mehmed V.",
+        body: "This project includes the survey drawings of the Sultan Reşad Han Tomb located in the Eyüpsultan district. Measurements were taken during weekly tomb visits and transferred to the digital environment. The presentation flow brings together plans, section views, elevations, and detail drawings. This study was carried out by a two-person team (Ayşegül Özkarslıoğlu & Tuğba Menşur).",
+        images: project3Images,
+        endLabel: "End of archive · Survey of Sultan Reşad Khan Tomb",
+        altPrefix: "Survey of Sultan Reşad Khan Tomb",
       };
   const titles = ["Beylerbeyi Sport Complex", "Impasse Library", "Survey Of Sultan Reşad Khan Tomb", "Implementation Project Of A Photographer House", "Losing Home: Metropolis, Dwelling, Body", "Instant Installation", "Sea Horse and Secret Underwater Cave", "Active Thought"];
 
