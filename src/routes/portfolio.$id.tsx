@@ -5,8 +5,18 @@ import project8_2 from "@/assets/project8-2.png";
 import project8_3 from "@/assets/project8-3.png";
 import project8_4 from "@/assets/project8-4.png";
 import project8_5 from "@/assets/project8-5.png";
+import project7_1 from "@/assets/project7-1.jpg";
+import project7_2 from "@/assets/project7-2.jpg";
+import project7_3 from "@/assets/project7-3.jpg";
+import project7_4 from "@/assets/project7-4.jpg";
+import project7_5 from "@/assets/project7-5.jpg";
+import project7_6 from "@/assets/project7-6.jpg";
+import project7_7 from "@/assets/project7-7.jpg";
+import project7_8 from "@/assets/project7-8.jpg";
+import project7_9 from "@/assets/project7-9.jpg";
 
 const project8Images = [project8_1, project8_2, project8_3, project8_4, project8_5];
+const project7Images = [project7_1, project7_2, project7_3, project7_4, project7_5, project7_6, project7_7, project7_8, project7_9];
 
 export const Route = createFileRoute("/portfolio/$id")({
   component: ProjectDetail,
@@ -22,7 +32,28 @@ function ProjectDetail() {
   const prev = n > 1 ? String(n - 1) : null;
   const next = n < 8 ? String(n + 1) : null;
 
-  const isArchive = n === 8;
+  const isArchive = n === 8 || n === 7;
+  const archiveConfig = n === 8
+    ? {
+        no: "08",
+        titleLines: ["Active", "Thought"],
+        sublabel: "Sketches · 5 min – 4 hours",
+        lede: "A series of sketches focused on the relationship between the process of searching for form and active thought.",
+        body: "These drawings, which take approximately 5 minutes to 4 hours, are considered components of the flow of thought specific to that time. They are productions that accompany thoughts not directly related to design — such as reminiscing about a memory or a character — rather than questions like where the entrance should be or how the circulation route should be planned.",
+        images: project8Images,
+        endLabel: "End of archive · Active Thought",
+        altPrefix: "Active Thought",
+      }
+    : {
+        no: "07",
+        titleLines: ["Sea Horse", "& Secret", "Underwater Cave"],
+        sublabel: "Story Book · Illustrated by Mira Nur Yılmaz",
+        lede: "The digital transference of a story written by a 9-year-old child, along with its accompanying visuals.",
+        body: "Since transferring the entire book would exceed the limits of the portfolio, only the parts related to the visuals were included in the study. The original drawings were shared at the end of this part.",
+        images: project7Images,
+        endLabel: "End of archive · Sea Horse and Secret Underwater Cave",
+        altPrefix: "Sea Horse and Secret Underwater Cave",
+      };
   const titles = ["Beylerbeyi Sport Complex", "Impasse Library", "Survey Of Sultan Reşad Khan Tomb", "Implementation Project Of A Photographer House", "Losing Home: Metropolis, Dwelling, Body", "Instant Installation", "Sea Horse and Secret Underwater Cave", "Active Thought"];
 
   return (
@@ -48,32 +79,34 @@ function ProjectDetail() {
           {/* Title + intro paragraph as an editorial spread */}
           <section className="mt-24 grid md:grid-cols-12 gap-x-12 gap-y-10">
             <div className="md:col-span-5 md:sticky md:top-24 self-start">
-              <p className="text-[10px] uppercase tracking-[0.4em] text-muted-foreground mb-6">— Archive No. 08</p>
+              <p className="text-[10px] uppercase tracking-[0.4em] text-muted-foreground mb-6">— Archive No. {archiveConfig.no}</p>
               <h2 className="font-display text-5xl md:text-6xl lg:text-7xl leading-[0.95] text-accent-mode">
-                Active<br />Thought
+                {archiveConfig.titleLines.map((line, i) => (
+                  <span key={i} className="block">{line}</span>
+                ))}
               </h2>
               <p className="mt-10 text-[11px] uppercase tracking-[0.3em] text-muted-foreground">
-                Sketches · 5 min – 4 hours
+                {archiveConfig.sublabel}
               </p>
             </div>
             <div className="md:col-span-6 md:col-start-7">
               <p className="font-display text-2xl md:text-3xl leading-[1.45] text-foreground/90">
-                A series of sketches focused on the relationship between the process of searching for form and active thought.
+                {archiveConfig.lede}
               </p>
               <p className="mt-10 text-base leading-[1.95] text-foreground/70 max-w-prose">
-                These drawings, which take approximately 5 minutes to 4 hours, are considered components of the flow of thought specific to that time. They are productions that accompany thoughts not directly related to design — such as reminiscing about a memory or a character — rather than questions like where the entrance should be or how the circulation route should be planned.
+                {archiveConfig.body}
               </p>
             </div>
           </section>
 
           {/* Plates — uniform presentation with generous breathing room */}
           <section className="mt-40 space-y-32 md:space-y-40 px-4 sm:px-8 md:px-16 lg:px-24">
-            {project8Images.map((src, i) => (
+            {archiveConfig.images.map((src, i) => (
               <figure key={i} className="max-w-[900px] mx-auto py-8 md:py-12">
                 <div className="px-4 sm:px-8 md:px-12">
                   <img
                     src={src}
-                    alt={`Active Thought — Plate ${String(i + 1).padStart(2, "0")}`}
+                    alt={`${archiveConfig.altPrefix} — Plate ${String(i + 1).padStart(2, "0")}`}
                     className="w-full h-auto object-contain"
                   />
                 </div>
@@ -85,7 +118,7 @@ function ProjectDetail() {
           </section>
 
           <p className="mt-32 text-center text-[10px] uppercase tracking-[0.5em] text-muted-foreground">
-            End of archive · Active Thought
+            {archiveConfig.endLabel}
           </p>
 
         </>
