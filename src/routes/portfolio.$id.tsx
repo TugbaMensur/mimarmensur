@@ -140,17 +140,17 @@ function ProjectDetail() {
                 <div className="px-4 sm:px-8 md:px-12">
                   <button
                     type="button"
-                    onClick={() => n === 6 && openLightbox(src)}
-                    className={`block w-full ${n === 6 ? "cursor-zoom-in group relative" : ""}`}
-                    aria-label={n === 6 ? "Zoom image" : undefined}
-                    disabled={n !== 6}
+                    onClick={() => (n === 6 || n === 7 || n === 8) && openLightbox(src)}
+                    className={`block w-full ${(n === 6 || n === 7 || n === 8) ? "cursor-zoom-in group relative" : ""}`}
+                    aria-label={(n === 6 || n === 7 || n === 8) ? "Zoom image" : undefined}
+                    disabled={n !== 6 && n !== 7 && n !== 8}
                   >
                     <img
                       src={src}
                       alt={`${archiveConfig.altPrefix} — Plate ${String(i + 1).padStart(2, "0")}`}
                       className="w-full h-auto object-contain"
                     />
-                    {n === 6 && (
+                    {(n === 6 || n === 7 || n === 8) && (
                       <span className="absolute top-2 right-2 inline-flex items-center gap-1 rounded-full bg-background/80 backdrop-blur px-2.5 py-1 text-[10px] uppercase tracking-[0.2em] text-foreground opacity-0 group-hover:opacity-100 transition-opacity">
                         <ZoomIn size={12} /> Zoom
                       </span>
