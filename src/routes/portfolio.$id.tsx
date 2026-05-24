@@ -63,7 +63,7 @@ function ProjectDetail() {
   }, [lightboxSrc]);
   const openLightbox = (src: string) => { setZoom(1); setLightboxSrc(src); };
 
-  const isArchive = n === 8 || n === 7 || n === 6;
+  const isArchive = n === 8 || n === 7 || n === 6 || n === 5;
   const archiveConfig = n === 8
     ? {
         no: "08",
@@ -86,7 +86,8 @@ function ProjectDetail() {
         endLabel: "End of archive · Sea Horse and Secret Underwater Cave",
         altPrefix: "Sea Horse and Secret Underwater Cave",
       }
-    : {
+    : n === 6
+    ? {
         no: "06",
         titleLines: ["Instant", "Installation"],
         sublabel: "Istanbul Technical University · Fall 2019–2020",
@@ -95,6 +96,16 @@ function ProjectDetail() {
         images: project6Images,
         endLabel: "End of archive · Instant Installation",
         altPrefix: "Instant Installation",
+      }
+    : {
+        no: "05",
+        titleLines: ["Losing Home:", "Metropolis,", "Dwelling, Body"],
+        sublabel: "AURA Istanbul · Fall 2018 · Supervised by Sinan Logie & Hande Tomboz",
+        lede: "A study pointing to the pains of the first physical contact with professional working life after architecture & city and regional planning education.",
+        body: "The metropolis is located at the center of a complex network of relationships that cannot be divided into home, work, transportation, and leisure time. What is the situation of a body in the time-performance interval covered by working life? Is there a family home left to return to? What else can home be but a place where the body feels relatively safe for 8–12 hours a day? Which of the 9 houses moved within the borders of the same metropolis was the most home-like? The method of the work is the use of representational tools of architecture and urbanism through bodily experiences — a series produced using different types of materials and techniques, including digital and analog collage.",
+        images: project5Images,
+        endLabel: "End of archive · Losing Home: Metropolis, Dwelling, Body",
+        altPrefix: "Losing Home",
       };
   const titles = ["Beylerbeyi Sport Complex", "Impasse Library", "Survey Of Sultan Reşad Khan Tomb", "Implementation Project Of A Photographer House", "Losing Home: Metropolis, Dwelling, Body", "Instant Installation", "Sea Horse and Secret Underwater Cave", "Active Thought"];
 
