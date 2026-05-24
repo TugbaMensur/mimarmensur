@@ -32,11 +32,15 @@ import project5_4 from "@/assets/project5-4.jpg";
 import project5_5 from "@/assets/project5-5.jpg";
 import project5_6 from "@/assets/project5-6.jpg";
 import project5_7 from "@/assets/project5-7.jpg";
+import project4_1 from "@/assets/project4-1.png";
+import project4_2 from "@/assets/project4-2.png";
+import project4_3 from "@/assets/project4-3.png";
 
 const project8Images = [project8_1, project8_2, project8_3, project8_4, project8_5];
 const project7Images = [project7_1, project7_2, project7_3, project7_4, project7_5, project7_6, project7_7, project7_8, project7_9];
 const project6Images = [project6_1, project6_2, project6_3, project6_4, project6_5, project6_6, project6_7, project6_8, project6_9];
 const project5Images = [project5_1, project5_2, project5_3, project5_4, project5_5, project5_6, project5_7];
+const project4Images = [project4_1, project4_2, project4_3];
 
 export const Route = createFileRoute("/portfolio/$id")({
   component: ProjectDetail,
@@ -63,7 +67,7 @@ function ProjectDetail() {
   }, [lightboxSrc]);
   const openLightbox = (src: string) => { setZoom(1); setLightboxSrc(src); };
 
-  const isArchive = n === 8 || n === 7 || n === 6 || n === 5;
+  const isArchive = n === 8 || n === 7 || n === 6 || n === 5 || n === 4;
   const archiveConfig = n === 8
     ? {
         no: "08",
@@ -97,7 +101,8 @@ function ProjectDetail() {
         endLabel: "End of archive · Instant Installation",
         altPrefix: "Instant Installation",
       }
-    : {
+    : n === 5
+    ? {
         no: "05",
         titleLines: ["Losing Home:", "Metropolis,", "Dwelling, Body"],
         sublabel: "AURA Istanbul · Fall 2018 · Supervised by Sinan Logie & Hande Tomboz",
@@ -106,6 +111,16 @@ function ProjectDetail() {
         images: project5Images,
         endLabel: "End of archive · Losing Home: Metropolis, Dwelling, Body",
         altPrefix: "Losing Home",
+      }
+    : {
+        no: "04",
+        titleLines: ["Implementation", "Project of a", "Photographer House"],
+        sublabel: "Mimar Sinan Fine Art University · Spring 2015–2016 · Supervised by Ayşegül Kuruç",
+        lede: "The design of a space combining a photographer's office and living quarters, resolved across three floors with a connecting gallery.",
+        body: "Within the scope of the Implementation Project, the design of a space that includes a photographer's office and living space has been offered. A dark room and a studio in the basement, an office on the ground floor, and a living space on the first floor have been solved. A gallery space that connects the floors and allows the interior of the space to receive light has been designed. The basement floor has a masonry system, the ground floor and the first floor have a steel system. The staircase plans and sections containing these solutions have been presented.",
+        images: project4Images,
+        endLabel: "End of archive · Implementation Project of a Photographer House",
+        altPrefix: "Implementation Project of a Photographer House",
       };
   const titles = ["Beylerbeyi Sport Complex", "Impasse Library", "Survey Of Sultan Reşad Khan Tomb", "Implementation Project Of A Photographer House", "Losing Home: Metropolis, Dwelling, Body", "Instant Installation", "Sea Horse and Secret Underwater Cave", "Active Thought"];
 
@@ -159,17 +174,17 @@ function ProjectDetail() {
                 <div className="px-4 sm:px-8 md:px-12">
                   <button
                     type="button"
-                    onClick={() => (n === 5 || n === 6 || n === 7 || n === 8) && openLightbox(src)}
-                    className={`block w-full ${(n === 5 || n === 6 || n === 7 || n === 8) ? "cursor-zoom-in group relative" : ""}`}
-                    aria-label={(n === 5 || n === 6 || n === 7 || n === 8) ? "Zoom image" : undefined}
-                    disabled={n !== 5 && n !== 6 && n !== 7 && n !== 8}
+                    onClick={() => (n === 4 || n === 5 || n === 6 || n === 7 || n === 8) && openLightbox(src)}
+                    className={`block w-full ${(n === 4 || n === 5 || n === 6 || n === 7 || n === 8) ? "cursor-zoom-in group relative" : ""}`}
+                    aria-label={(n === 4 || n === 5 || n === 6 || n === 7 || n === 8) ? "Zoom image" : undefined}
+                    disabled={n !== 4 && n !== 5 && n !== 6 && n !== 7 && n !== 8}
                   >
                     <img
                       src={src}
                       alt={`${archiveConfig.altPrefix} — Plate ${String(i + 1).padStart(2, "0")}`}
                       className="w-full h-auto object-contain"
                     />
-                    {(n === 5 || n === 6 || n === 7 || n === 8) && (
+                    {(n === 4 || n === 5 || n === 6 || n === 7 || n === 8) && (
                       <span className="absolute top-2 right-2 inline-flex items-center gap-1 rounded-full bg-background/80 backdrop-blur px-2.5 py-1 text-[10px] uppercase tracking-[0.2em] text-foreground opacity-0 group-hover:opacity-100 transition-opacity">
                         <ZoomIn size={12} /> Zoom
                       </span>
