@@ -14,9 +14,19 @@ import project7_6 from "@/assets/project7-6.jpg";
 import project7_7 from "@/assets/project7-7.jpg";
 import project7_8 from "@/assets/project7-8.jpg";
 import project7_9 from "@/assets/project7-9.jpg";
+import project6_1 from "@/assets/project6-1.jpg";
+import project6_2 from "@/assets/project6-2.jpg";
+import project6_3 from "@/assets/project6-3.jpg";
+import project6_4 from "@/assets/project6-4.jpg";
+import project6_5 from "@/assets/project6-5.jpg";
+import project6_6 from "@/assets/project6-6.jpg";
+import project6_7 from "@/assets/project6-7.jpg";
+import project6_8 from "@/assets/project6-8.jpg";
+import project6_9 from "@/assets/project6-9.jpg";
 
 const project8Images = [project8_1, project8_2, project8_3, project8_4, project8_5];
 const project7Images = [project7_1, project7_2, project7_3, project7_4, project7_5, project7_6, project7_7, project7_8, project7_9];
+const project6Images = [project6_1, project6_2, project6_3, project6_4, project6_5, project6_6, project6_7, project6_8, project6_9];
 
 export const Route = createFileRoute("/portfolio/$id")({
   component: ProjectDetail,
@@ -32,7 +42,7 @@ function ProjectDetail() {
   const prev = n > 1 ? String(n - 1) : null;
   const next = n < 8 ? String(n + 1) : null;
 
-  const isArchive = n === 8 || n === 7;
+  const isArchive = n === 8 || n === 7 || n === 6;
   const archiveConfig = n === 8
     ? {
         no: "08",
@@ -44,7 +54,8 @@ function ProjectDetail() {
         endLabel: "End of archive · Active Thought",
         altPrefix: "Active Thought",
       }
-    : {
+    : n === 7
+    ? {
         no: "07",
         titleLines: ["Sea Horse", "& Secret", "Underwater Cave"],
         sublabel: "Story Book · Illustrated by Mira Nur Yılmaz",
@@ -53,6 +64,16 @@ function ProjectDetail() {
         images: project7Images,
         endLabel: "End of archive · Sea Horse and Secret Underwater Cave",
         altPrefix: "Sea Horse and Secret Underwater Cave",
+      }
+    : {
+        no: "06",
+        titleLines: ["Instant", "Installation"],
+        sublabel: "Istanbul Technical University · Fall 2019–2020",
+        lede: "A two-part study exploring the relationship between matter, form, and meaning — first through an architect's monograph, then through an installation in the vacant room of the city.",
+        body: "The first part discusses the relationship between matter, form, and meaning through the monograph of a selected architect. In the second part, the conceptual base is integrated with the city: a selected area is perceived as the empty room of the city, and an installation study is carried out in this area within the scope of the discussions.",
+        images: project6Images,
+        endLabel: "End of archive · Instant Installation",
+        altPrefix: "Instant Installation",
       };
   const titles = ["Beylerbeyi Sport Complex", "Impasse Library", "Survey Of Sultan Reşad Khan Tomb", "Implementation Project Of A Photographer House", "Losing Home: Metropolis, Dwelling, Body", "Instant Installation", "Sea Horse and Secret Underwater Cave", "Active Thought"];
 
