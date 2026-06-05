@@ -11,16 +11,7 @@ export const Route = createFileRoute("/documents")({
   component: Documents,
 });
 
-const courses = [
-  "Advanced Parametric Design",
-  "Seismic Architecture Workshop",
-  "Sustainable Urbanism Seminar",
-  "Phenomenology in Architecture",
-  "Computational Design Methods",
-  "Heritage Conservation Studies",
-  "Light and Material Studio",
-  "Critical Theory in Spatial Practice",
-];
+
 
 function Documents() {
   return (
@@ -47,24 +38,8 @@ function Documents() {
         ))}
       </div>
 
-      <div className="mt-32 grid md:grid-cols-12 gap-12">
-        <div className="md:col-span-4">
-          <h2 className="font-display text-3xl">Additional<br />Courses</h2>
-          <div className="mt-6 h-px w-12 bg-accent-mode" />
-        </div>
-        <ul className="md:col-span-7 md:col-start-6 space-y-5">
-          {courses.map((c) => (
-            <li
-              key={c}
-              className="flex items-center text-base border-b border-border pb-4 hover:text-accent-mode transition-colors"
-            >
-              <span className="accent-dot" />
-              <span>{c}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
     </section>
     </>
   );
 }
+
