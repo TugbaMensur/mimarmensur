@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { BackButton } from "@/components/BackButton";
+import thesisFirstPage from "@/assets/thesis-first-page.png.asset.json";
 
 const THESIS_DRIVE_URL =
   "https://drive.google.com/file/d/1eIAX2GWaRhjKx874Dnj7lIRZCAsASbHc/view?usp=share_link";
