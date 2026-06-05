@@ -60,11 +60,11 @@ function Thesis() {
 
           {/* Architectural sketch thumbnail */}
           <div className="md:col-span-4">
-            <div className="aspect-[3/4] border border-border bg-secondary/40 flex items-center justify-center overflow-hidden">
+            <div className="aspect-[3/4] border border-border bg-secondary/40 overflow-hidden">
               <img
                 src={thesisFirstPage.url}
                 alt="Thesis presentation first page — Klee 2006 diagram"
-                className="w-full h-full object-contain"
+                className="w-full h-full object-cover"
               />
             </div>
             <p className="mt-3 text-[10px] uppercase tracking-[0.3em] text-muted-foreground text-right">
