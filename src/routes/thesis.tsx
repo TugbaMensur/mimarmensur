@@ -198,7 +198,9 @@ function Thesis() {
               <div key={s.id} className="grid md:grid-cols-12 gap-8">
                 <div className="md:col-span-3">
                   <h3 className="font-display text-2xl text-accent-mode">
-                    {s.name}
+                    <a href="https://www.isarconference.org/_files/ugd/6dc816_3b532e77b09c49c1b276e1ab5abd74c2.pdf" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                      {s.name}
+                    </a>
                   </h3>
                   <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground mt-2">
                     {s.desc}
