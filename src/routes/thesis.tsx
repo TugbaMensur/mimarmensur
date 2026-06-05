@@ -209,7 +209,7 @@ function Thesis() {
                 <div className="md:col-span-8 md:col-start-5 space-y-6">
                   <p className="font-display text-lg leading-relaxed">
                     <strong className="text-accent-mode font-normal">Note:</strong>{" "}
-                    The full paper is available on page 59. To access the full paper, please navigate to the 'isarc' tab and refer to page 59.
+                    To access the full paper, please navigate to the 'isarc' tab and refer to page 59.
                   </p>
                 </div>
               </div>
