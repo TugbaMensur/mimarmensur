@@ -33,8 +33,8 @@ function Documents() {
       <div className="mt-20 grid md:grid-cols-2 gap-6">
         {[
           { title: "Curriculum Vitae", type: "CV" },
-          { title: "Professional Certificates", type: "Certificate" },
-          { title: "Academic Transcript", type: "Transcript" },
+          { title: "Undergraduate & Graduate", type: "Degrees" },
+          { title: "Undergraduate & Graduate", type: "Relevant Coursework" },
           { title: "Portfolio (PDF)", type: "Portfolio" },
         ].map((d) => (
           <div key={d.title} className="group border border-border p-8 hover:border-accent-mode transition-colors cursor-pointer">
