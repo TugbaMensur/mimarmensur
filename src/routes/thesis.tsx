@@ -188,14 +188,12 @@ function Thesis() {
             Writings
           </p>
           <h2 className="font-display text-4xl md:text-5xl leading-[1.05]">
-            Publications & Essays
+            Publication & Essay
           </h2>
 
           <div className="mt-16 space-y-20">
             {[
               { id: "isarc", name: "Isarc", desc: "Conference proceedings" },
-              { id: "aura", name: "AURA", desc: "Peer-reviewed journal" },
-              { id: "utopia", name: "Utopia", desc: "Independent essays" },
             ].map((s) => (
               <div key={s.id} className="grid md:grid-cols-12 gap-8">
                 <div className="md:col-span-3">
