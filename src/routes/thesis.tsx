@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { BackButton } from "@/components/BackButton";
+import thesisFirstPage from "@/assets/thesis-first-page.png.asset.json";
 
 const THESIS_DRIVE_URL =
   "https://drive.google.com/file/d/1eIAX2GWaRhjKx874Dnj7lIRZCAsASbHc/view?usp=share_link";
@@ -59,22 +60,12 @@ function Thesis() {
 
           {/* Architectural sketch thumbnail */}
           <div className="md:col-span-4">
-            <div className="aspect-[3/4] border border-border bg-secondary/40 flex items-center justify-center">
-              <svg
-                viewBox="0 0 120 160"
-                className="w-2/3 h-2/3 text-accent-mode opacity-70"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="0.8"
-              >
-                <rect x="20" y="40" width="80" height="100" />
-                <line x1="20" y1="70" x2="100" y2="70" />
-                <line x1="20" y1="100" x2="100" y2="100" />
-                <line x1="60" y1="40" x2="60" y2="140" />
-                <line x1="20" y1="40" x2="60" y2="20" />
-                <line x1="100" y1="40" x2="60" y2="20" />
-                <line x1="0" y1="140" x2="120" y2="140" />
-              </svg>
+            <div className="aspect-[3/4] border border-border bg-secondary/40 flex items-center justify-center overflow-hidden">
+              <img
+                src={thesisFirstPage.url}
+                alt="Thesis presentation first page — Klee 2006 diagram"
+                className="w-full h-full object-contain"
+              />
             </div>
             <p className="mt-3 text-[10px] uppercase tracking-[0.3em] text-muted-foreground text-right">
               Sketch · Threshold Study
