@@ -28,7 +28,7 @@ function Publications() {
           <div key={s.id} className="grid md:grid-cols-12 gap-8">
             <div className="md:col-span-3">
               <h2 className="font-display text-3xl text-accent-mode">
-                <a href="https://www.isarconference.org/_files/ugd/6dc816_3b532e77b09c49c1b276e1ab5abd74c2.pdf" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                <a href="https://www.isarconference.org/_files/ugd/6dc816_3b532e77b09c49c1b276e1ab5abd74c2.pdf" target="_blank" rel="noopener noreferrer" className="underline">
                   {s.name}
                 </a>
               </h2>
@@ -37,7 +37,7 @@ function Publications() {
             <div className="md:col-span-8 md:col-start-5 space-y-8">
               <p className="font-display text-lg leading-relaxed">
                 <strong className="text-accent-mode font-normal">Note:</strong>{" "}
-                The full paper is available on page 59.
+                The full paper is available on page 59. To access the full paper, please navigate to the 'isarc' tab and refer to page 59.
               </p>
               {[1, 2].map((i) => (
                 <article key={i} className="border-t border-border pt-6">
