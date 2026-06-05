@@ -1,8 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { BackButton } from "@/components/BackButton";
 
-const THESIS_DRIVE_URL = "/thesis-presentation.pdf";
-const THESIS_PREVIEW_URL = "/thesis-presentation.pdf";
+const THESIS_DRIVE_URL =
+  "https://drive.google.com/file/d/1eIAX2GWaRhjKx874Dnj7lIRZCAsASbHc/view?usp=sharing";
+const THESIS_PREVIEW_URL =
+  "https://drive.google.com/file/d/1eIAX2GWaRhjKx874Dnj7lIRZCAsASbHc/preview";
 const THESIS_READ_URL =
   "https://drive.google.com/file/d/1WL34pZmtS0kCyS4QsnOVrKyBD3IcKxlu/view";
 const THESIS_READ_PREVIEW_URL =
