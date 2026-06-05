@@ -27,13 +27,17 @@ function Publications() {
         {sections.map((s) => (
           <div key={s.id} className="grid md:grid-cols-12 gap-8">
             <div className="md:col-span-3">
-              <h2 className="font-display text-3xl text-accent-mode">{s.name}</h2>
+              <h2 className="font-display text-3xl text-accent-mode">
+                <a href="https://www.isarconference.org/_files/ugd/6dc816_3b532e77b09c49c1b276e1ab5abd74c2.pdf" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                  {s.name}
+                </a>
+              </h2>
               <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground mt-2">{s.desc}</p>
             </div>
             <div className="md:col-span-8 md:col-start-5 space-y-8">
               <p className="font-display text-lg leading-relaxed">
-                <strong className="text-accent-mode font-normal">Note:</strong> Actual
-                academic text for {s.name} will be inserted here.
+                <strong className="text-accent-mode font-normal">Note:</strong>{" "}
+                The full paper is available on page 59.
               </p>
               {[1, 2].map((i) => (
                 <article key={i} className="border-t border-border pt-6">
