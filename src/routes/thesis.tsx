@@ -184,7 +184,7 @@ function Thesis() {
 
           <div className="mt-16 space-y-20">
             {[
-              { id: "isarc", name: "Isarc", desc: "Conference proceedings" },
+              { id: "isarc", name: "isarc", desc: "Conference proceedings" },
             ].map((s) => (
               <div key={s.id} className="grid md:grid-cols-12 gap-8">
                 <div className="md:col-span-3">
