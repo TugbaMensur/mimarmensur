@@ -5,7 +5,7 @@ export const Route = createFileRoute("/publications")({
   head: () => ({
     meta: [
       { title: "Publications — Tuğba Menşur" },
-      { name: "description", content: "Essays and publications: Isarc, AURA, Utopia." },
+      { name: "description", content: "Publication & Essay: Isarc." },
     ],
   }),
   component: Publications,
@@ -13,8 +13,6 @@ export const Route = createFileRoute("/publications")({
 
 const sections = [
   { id: "isarc", name: "Isarc", desc: "Conference proceedings" },
-  { id: "aura", name: "AURA", desc: "Peer-reviewed journal" },
-  { id: "utopia", name: "Utopia", desc: "Independent essays" },
 ];
 
 function Publications() {
@@ -23,7 +21,7 @@ function Publications() {
       <BackButton />
     <section className="max-w-[1200px] mx-auto px-8 py-24">
       <p className="text-xs uppercase tracking-[0.4em] text-accent-mode mb-6">Writings</p>
-      <h1 className="font-display text-5xl md:text-6xl leading-[1.05]">Publications<br />& Essays</h1>
+      <h1 className="font-display text-5xl md:text-6xl leading-[1.05]">Publication<br />& Essay</h1>
 
       <div className="mt-20 space-y-24">
         {sections.map((s) => (
