@@ -209,7 +209,7 @@ function Thesis() {
                 <div className="md:col-span-8 md:col-start-5 space-y-6">
                   <p className="font-display text-lg leading-relaxed">
                     <strong className="text-accent-mode font-normal">Note:</strong>{" "}
-                    Actual academic text for {s.name} will be inserted here.
+                    The full paper is available on page 59.
                   </p>
                 </div>
               </div>
