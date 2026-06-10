@@ -56,11 +56,11 @@
   --input: oklch(0.9 0.003 90);
   --ring: oklch(0.7 0.04 256.788);
 
-  /* Dual-tone accent system — sketch palette */
-  --accent-creative: #002D72; /* Derin Kobalt Mavisi */
-  --accent-academic: #009999; /* Canlı Teal */
+  /* Dual-tone accent system */
+  --accent-creative: #173B8C; /* Deep Blue */
+  --accent-academic: #173B8C; /* Deep Blue */
   --accent-color: var(--accent-creative);
-  --accent-hover: #009999;
+  --accent-hover: #E8425B; /* Accent Red */
 }
 
 [data-mode="academic"] {
