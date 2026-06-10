@@ -35,7 +35,7 @@ function About() {
             src={portraitAsset.url}
             alt="Portrait of Tuğba Menşur"
             loading="lazy"
-            className="mt-10 w-full max-w-xs md:max-w-full h-auto grayscale"
+            className="mt-10 w-full max-w-xs md:max-w-full h-auto"
           />
         </div>
 
