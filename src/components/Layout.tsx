@@ -34,8 +34,8 @@ function NavList({ onNavigate }: { onNavigate?: () => void }) {
             className={cn(
               "font-display text-base tracking-[0.2em] uppercase transition-colors hover-neon",
               isActive
-                ? "text-accent-mode"
-                : "text-muted-foreground"
+                ? "text-[#E8425B]"
+                : "text-[#173B8C]"
             )}
           >
             {n.label}
