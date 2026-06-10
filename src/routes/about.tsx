@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { BackButton } from "@/components/BackButton";
 import { cn } from "@/lib/utils";
+import portraitAsset from "@/assets/tugba-portrait.png.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -30,6 +31,12 @@ function About() {
             Menşur
           </h1>
           <div className="mt-8 h-px w-16 bg-accent-mode" />
+          <img
+            src={portraitAsset.url}
+            alt="Portrait of Tuğba Menşur"
+            loading="lazy"
+            className="mt-10 w-full max-w-xs md:max-w-full h-auto grayscale"
+          />
         </div>
 
         <div className="md:col-span-7 md:col-start-6 space-y-6 text-base leading-[1.9] text-foreground/85">
