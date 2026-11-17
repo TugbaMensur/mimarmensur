@@ -2,6 +2,22 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import mainVisual from "@/assets/main-visual.png";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Tuğba Menşur | Architect & Urban Planner" },
+      {
+        name: "description",
+        content:
+          "Tuğba Menşur is an architect and urban planner working at the intersection of architectural design, urban planning, and research.",
+      },
+      { property: "og:title", content: "Tuğba Menşur | Architect & Urban Planner" },
+      {
+        property: "og:description",
+        content:
+          "Tuğba Menşur is an architect and urban planner working at the intersection of architectural design, urban planning, and research.",
+      },
+    ],
+  }),
   component: Index,
 });
 

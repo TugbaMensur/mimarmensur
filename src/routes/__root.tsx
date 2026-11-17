@@ -6,6 +6,7 @@ import {
   useRouter,
   HeadContent,
   Scripts,
+  type ErrorComponentProps,
 } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
@@ -25,14 +26,16 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent({ error, reset }: ErrorComponentProps) {
   console.error(error);
   const router = useRouter();
+  const message =
+    error instanceof Error ? error.message : String(error);
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="font-display text-2xl">Something went wrong</h1>
-        <p className="mt-2 text-sm text-muted-foreground">{error.message}</p>
+        <p className="mt-2 text-sm text-muted-foreground">{message}</p>
         <button
           onClick={() => { router.invalidate(); reset(); }}
           className="mt-6 text-xs uppercase tracking-[0.3em] border-b border-foreground pb-1"
@@ -49,13 +52,25 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Tuğba Menşur — Architect" },
-      { name: "description", content: "Portfolio of architect Tuğba Menşur — projects, research, and publications." },
-      { property: "og:title", content: "Tuğba Menşur — Architect" },
-      { property: "og:description", content: "Portfolio of architect Tuğba Menşur — projects, research, and publications." },
+      { title: "Tuğba Menşur | Architect & Urban Planner" },
+      {
+        name: "description",
+        content:
+          "Tuğba Menşur is an architect and urban planner working at the intersection of architectural design, urban planning, and research.",
+      },
+      { property: "og:title", content: "Tuğba Menşur | Architect & Urban Planner" },
+      {
+        property: "og:description",
+        content:
+          "Tuğba Menşur is an architect and urban planner working at the intersection of architectural design, urban planning, and research.",
+      },
       { property: "og:type", content: "website" },
-      { name: "twitter:title", content: "Tuğba Menşur — Architect" },
-      { name: "twitter:description", content: "Portfolio of architect Tuğba Menşur — projects, research, and publications." },
+      { name: "twitter:title", content: "Tuğba Menşur | Architect & Urban Planner" },
+      {
+        name: "twitter:description",
+        content:
+          "Tuğba Menşur is an architect and urban planner working at the intersection of architectural design, urban planning, and research.",
+      },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/ad86713a-9191-4730-8a35-15a5da0576f0/id-preview-70267e10--a63be510-f7e4-431b-a6f1-79e40d4a494e.lovable.app-1778769863288.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/ad86713a-9191-4730-8a35-15a5da0576f0/id-preview-70267e10--a63be510-f7e4-431b-a6f1-79e40d4a494e.lovable.app-1778769863288.png" },
       { name: "twitter:card", content: "summary_large_image" },
